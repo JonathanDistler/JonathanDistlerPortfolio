@@ -258,7 +258,7 @@ const projectData = {
             { src: "images/dynamic_deriv.png", caption: "Dynamical Derivation for Tail Angle" }
         ],
         videos: [
-            { src: "C:\\MuJoCo\\Fish_Force_Test_8_30.mp4", caption: "Force Test Video" }
+            { src: "images/Fish_Force_Test_8_30.mp4", caption: "Force Test Video" }
         ],
         details: `
             <h3>Project Overview</h3>
@@ -616,4 +616,5 @@ function closeProjectModal() {
 }
 
 console.log('Personal website loaded successfully! 🚀');
+
 
