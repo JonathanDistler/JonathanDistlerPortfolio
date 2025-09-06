@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Game of Life</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      width: 40px;
+      height: 40px;
+      background-color: lightgray;
+    }
+    canvas {
+      margin-top: 20px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+
+<h1 id="simTitle">Game of Life</h1>
+<table id="board">
+  <!-- 8x8 grid -->
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<script>
+const rowNum = 8;
+const colNum = 8;
+const numEpochs = 10;       // number of steps per run
+const numGenerations = 5;   // number of separate runs
+
+let arr, countArr, epoch;
+let entropyArr = Array.from({length: rowNum}, () => Array(colNum).fill(0));
+
+function updateTitle(text) {
+  document.getElementById("simTitle").textContent = text;
+}
+
+function colorChange(i, j, color) {
+  document.getElementById("board").rows[i].cells[j].style.backgroundColor = color;
+}
+
+function numCount(i, j, arr) {
+  let count = 0;
+  for (let k = i-1; k<=i+1; k++){
+    for (let l=j-1; l<=j+1; l++){
+      if ((k!==i || l!==j) && k>=0 && k<rowNum && l>=0 && l<colNum){
+        if (arr[k][l]===1) count++;
+      }
+    }
+  }
+  return count;
+}
+
+function gameSetup() {
+  arr = Array.from({length: rowNum}, () => Array(colNum).fill(0));
+  countArr = Array.from({length: rowNum}, () => Array(colNum).fill(0));
+  for (let i=0;i<rowNum;i++){
+    for (let j=0;j<colNum;j++){
+      if (Math.random() < 0.5){
+        arr[i][j] = 1;
+        colorChange(i,j,"blue");
+      } else {
+        arr[i][j] = 0;
+        colorChange(i,j,"lightgray");
+      }
+    }
+  }
+}
+
+// Blue-Red gradient function
+function getBlueShade(value, min=0, max=numGenerations*numEpochs) {
+  let t = (value - min) / (max - min);
+  let r = (255 * t);
+  let g = 0;
+  let b = (255 * (1 - t));
+  return `rgb(${r},${g},${b})`;
+}
+
+function runSimulation(runIndex=0) {
+  if (runIndex >= numGenerations) {
+    showGradient(entropyArr);
+    return;
+  }
+
+  gameSetup();
+  epoch = 0;
+
+  let interval = setInterval(()=>{
+    epoch++;
+    updateTitle(`Run ${runIndex+1}/${numGenerations} — Epoch ${epoch}`);
+
+    let nextArr = arr.map(r=>[...r]);
+
+    for(let i=0;i<rowNum;i++){
+      for(let j=0;j<colNum;j++){
+        const neighbors = numCount(i,j,arr);
+        if(arr[i][j]===1){
+          if(neighbors<2 || neighbors>3){
+            nextArr[i][j]=0;
+            countArr[i][j]+=1;
+          }
+        } else {
+          if(neighbors===3){
+            nextArr[i][j]=1;
+            countArr[i][j]+=1;
+          }
+        }
+      }
+    }
+
+    // accumulate counts into entropyArr
+    for(let i=0;i<rowNum;i++){
+      for(let j=0;j<colNum;j++){
+        entropyArr[i][j] += countArr[i][j];
+      }
+    }
+
+    arr = nextArr;
+
+    // render table
+    for(let i=0;i<rowNum;i++){
+      for(let j=0;j<colNum;j++){
+        colorChange(i,j, arr[i][j]===1 ? "blue" : "lightgray");
+      }
+    }
+
+    if(epoch >= numEpochs){
+      clearInterval(interval);
+      runSimulation(runIndex+1); // start next run
+    }
+  }, 300);
+}
+
+// Show the gradient after simulation ends
+function showGradient(arr) {
+  const table = document.getElementById("board");
+  table.remove();
+
+  const canvas = document.createElement("canvas");
+  canvas.width = colNum*40;
+  canvas.height = rowNum*40;
+  document.body.appendChild(canvas);
+  const ctx = canvas.getContext("2d");
+
+  for(let i=0;i<rowNum;i++){
+    for(let j=0;j<colNum;j++){
+      ctx.fillStyle = getBlueShade(arr[i][j]);
+      ctx.fillRect(j*40, i*40, 40, 40);
+    }
+  }
+
+  updateTitle("Cell Change Gradient");
+}
+
+// start everything
+runSimulation();
+
+</script>
+
+
+</body>
+</html>
