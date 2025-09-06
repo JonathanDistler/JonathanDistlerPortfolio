@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Images to Your Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+        }
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .file-input {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .instructions {
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .btn {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn:hover {
+            background: #5a67d8;
+        }
+        .preview {
+            max-width: 200px;
+            max-height: 200px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Add Images to Your Website</h1>
+        
+        <div class="section">
+            <h2>Profile Picture</h2>
+            <div class="instructions">
+                <strong>Current:</strong> <span id="profile-status">Checking...</span><br>
+                <strong>Required:</strong> profile.jpg (300x300px recommended, square format)
+            </div>
+            <input type="file" id="profile-input" class="file-input" accept="image/*">
+            <div id="profile-preview"></div>
+        </div>
+
+        <div class="section">
+            <h2>Project Images</h2>
+            <div class="instructions">
+                Add screenshots or photos of your projects. Images will be automatically resized and optimized.
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div>
+                    <h3>Project 1</h3>
+                    <div id="project1-status">Checking...</div>
+                    <input type="file" id="project1-input" class="file-input" accept="image/*">
+                    <div id="project1-preview"></div>
+                </div>
+                
+                <div>
+                    <h3>Project 2</h3>
+                    <div id="project2-status">Checking...</div>
+                    <input type="file" id="project2-input" class="file-input" accept="image/*">
+                    <div id="project2-preview"></div>
+                </div>
+                
+                <div>
+                    <h3>Project 3</h3>
+                    <div id="project3-status">Checking...</div>
+                    <input type="file" id="project3-input" class="file-input" accept="image/*">
+                    <div id="project3-preview"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Quick Actions</h2>
+            <button class="btn" onclick="checkAllImages()">Check All Images</button>
+            <button class="btn" onclick="openImagesFolder()">Open Images Folder</button>
+            <button class="btn" onclick="refreshWebsite()">Refresh Website</button>
+        </div>
+    </div>
+
+    <script>
+        // Check if images exist
+        function checkImageExists(filename, statusElement) {
+            const img = new Image();
+            img.onload = function() {
+                statusElement.innerHTML = '✅ Found: ' + filename;
+                statusElement.style.color = 'green';
+            };
+            img.onerror = function() {
+                statusElement.innerHTML = '❌ Missing: ' + filename;
+                statusElement.style.color = 'red';
+            };
+            img.src = '../images/' + filename;
+        }
+
+        // Initialize image checks
+        function initImageChecks() {
+            checkImageExists('profile.jpg', document.getElementById('profile-status'));
+            checkImageExists('project1.jpg', document.getElementById('project1-status'));
+            checkImageExists('project2.jpg', document.getElementById('project2-status'));
+            checkImageExists('project3.jpg', document.getElementById('project3-status'));
+        }
+
+        // Handle file uploads
+        function setupFileInput(inputId, targetFilename, previewId) {
+            const input = document.getElementById(inputId);
+            input.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    // Create a preview
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const preview = document.getElementById(previewId);
+                        preview.innerHTML = `<img src="${e.target.result}" class="preview" alt="Preview">`;
+                    };
+                    reader.readAsDataURL(file);
+                    
+                    // Instructions for manual copy
+                    alert(`Please copy this file to your images folder and rename it to: ${targetFilename}\n\nLocation: C:\\Users\\jonat\\personal-website\\images\\${targetFilename}`);
+                }
+            });
+        }
+
+        // Setup all file inputs
+        setupFileInput('profile-input', 'profile.jpg', 'profile-preview');
+        setupFileInput('project1-input', 'project1.jpg', 'project1-preview');
+        setupFileInput('project2-input', 'project2.jpg', 'project2-preview');
+        setupFileInput('project3-input', 'project3.jpg', 'project3-preview');
+
+        // Utility functions
+        function checkAllImages() {
+            initImageChecks();
+        }
+
+        function openImagesFolder() {
+            alert('Open this folder in File Explorer:\nC:\\Users\\jonat\\personal-website\\images\\');
+        }
+
+        function refreshWebsite() {
+            window.open('../index.html', '_blank');
+        }
+
+        // Initialize on page load
+        initImageChecks();
+    </script>
+</body>
+</html>
