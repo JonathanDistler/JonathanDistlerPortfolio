@@ -262,7 +262,7 @@ const projectData = {
         ],
         details: `
             <h3>Project Overview</h3>
-            <p>This project was developed during my summer internship at ETH Zurich's Soft Robotics Laboratory (SRL). I was tasked with optimizing a soft-robotic tail for force-output and fish maneuverability, with a focus on creating an iterative design program for tail dimension optimization.</p>
+            <p>This project was developed during my summer internship at ETH Zurich's Soft Robotics Laboratory (SRL). I was tasked with optimizing a soft-robotic tail for force-output and fish maneuverability, with a focus on creating an iterative design program for tail dimension optimization. Much of the research is still proprietary and under research, so images can't be shown! </p>
             
             <h3>Key Features</h3>
             <p>• Computer vision analysis for tail curvature measurement<br>
@@ -616,5 +616,6 @@ function closeProjectModal() {
 }
 
 console.log('Personal website loaded successfully! 🚀');
+
 
 
