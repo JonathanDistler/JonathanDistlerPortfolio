@@ -139,6 +139,13 @@ body {
     border: 2px solid transparent;
 }
 
+/* Make Learn More buttons larger in hero and project cards */
+.hero .btn-primary,
+.project-expand-btn {
+    padding: 14px 36px;
+    font-size: 1.05rem;
+}
+
 .btn-primary {
     background-color: white;
     color: #667eea;
