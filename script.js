@@ -205,6 +205,55 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
+// Dynamic purple↔blue gradient background for hero
+document.addEventListener('DOMContentLoaded', () => {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    let animationId = null;
+    let startTime = performance.now();
+
+    function hsl(h, s, l) {
+        return `hsl(${h}, ${s}%, ${l}%)`;
+    }
+
+    function animate(now) {
+        const t = (now - startTime) / 1000; // seconds
+        // Hue oscillates smoothly between purple (~270) and blue (~215)
+        const hueCenter = 242;       // midpoint hue
+        const hueAmplitude = 27;     // swing range
+        const speed = 0.25;          // cycles per second
+
+        const hue1 = hueCenter + hueAmplitude * Math.sin(2 * Math.PI * speed * t);
+        const hue2 = hueCenter - hueAmplitude * Math.sin(2 * Math.PI * speed * t + Math.PI / 6);
+
+        const color1 = hsl(hue1.toFixed(1), 70, 62);
+        const color2 = hsl(hue2.toFixed(1), 68, 54);
+
+        hero.style.background = `linear-gradient(135deg, ${color1} 0%, ${color2} 100%)`;
+        animationId = requestAnimationFrame(animate);
+    }
+
+    function start() {
+        if (animationId == null) {
+            startTime = performance.now();
+            animationId = requestAnimationFrame(animate);
+        }
+    }
+
+    function stop() {
+        if (animationId != null) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
+    }
+
+    start();
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop(); else start();
+    });
+});
+
 // Add scroll progress indicator
 const progressBar = document.createElement('div');
 progressBar.style.cssText = `
