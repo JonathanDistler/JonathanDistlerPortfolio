@@ -254,6 +254,91 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Canvas sine waves oscillating background
+document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('heroWaves');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    let width = 0;
+    let height = 0;
+    let dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let animationId = null;
+    let startTime = performance.now();
+
+    const waves = Array.from({ length: 6 }).map((_, i) => ({
+        amplitude: 14 + i * 4,
+        wavelength: 120 - i * 10,
+        speed: 0.7 + i * 0.08,
+        phase: Math.random() * Math.PI * 2,
+        color: `rgba(255,255,255,${0.05 + i * 0.012})`
+    }));
+
+    function resize() {
+        const rect = canvas.parentElement.getBoundingClientRect();
+        width = Math.floor(rect.width);
+        height = Math.floor(rect.height);
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function draw(t) {
+        ctx.clearRect(0, 0, width, height);
+
+        // oscillate a horizontal offset to create back-and-forth motion
+        const xOffset = Math.sin(t * 0.0015) * 80; // +/- 80px shift
+
+        waves.forEach((w, idx) => {
+            ctx.beginPath();
+            const baseline = height * (0.25 + 0.5 * (idx / (waves.length - 1)));
+            const k = (Math.PI * 2) / w.wavelength;
+            const omega = w.speed * 0.004; // time factor for vertical oscillation
+            
+            // oscillate amplitude over time - each wave has different frequency
+            const amplitudeMultiplier = 0.1 + 0.9 * Math.sin(t * 0.0008 + idx * 0.5);
+            const currentAmplitude = w.amplitude * amplitudeMultiplier;
+
+            for (let x = 0; x <= width; x += 2) {
+                const y = baseline + Math.sin(k * (x + xOffset) + w.phase + t * omega) * currentAmplitude;
+                if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            }
+
+            ctx.strokeStyle = w.color;
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        });
+    }
+
+    function animate(now) {
+        const t = now - startTime;
+        draw(t);
+        animationId = requestAnimationFrame(animate);
+    }
+
+    function start() {
+        if (animationId == null) {
+            startTime = performance.now();
+            animationId = requestAnimationFrame(animate);
+        }
+    }
+
+    function stop() {
+        if (animationId != null) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
+    }
+
+    resize();
+    start();
+    window.addEventListener('resize', resize);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else start(); });
+});
+
 // Add scroll progress indicator
 const progressBar = document.createElement('div');
 progressBar.style.cssText = `
