@@ -593,6 +593,33 @@ const projectData = {
             { text: "View Details", url: "#", type: "primary" }
         ]
     }
+
+    ,7: {
+        title: "Mechanics of Materials Notes",
+        placeholder: "Mechanics of Materials",
+        description: "Comprehensive Mechanics of Materials notes and worked examples from MAE 3270, covering stress, strain, beams, torsion, and failure criteria.",
+        tech: ["Mechanics of Materials", "Course Notes", "LaTeX / PDF"],
+        images: [],
+        details: `
+            <h3>Overview</h3>
+            <p>This PDF collects my Mechanics of Materials notes from MAE 3270, including key derivations, formulas, and fully worked example problems. It is intended as a concise reference for core topics such as axial loading, torsion, bending, shear, combined loading, and failure theories.</p>
+
+            <h3>Topics Included</h3>
+            <p>• Stress and strain (normal and shear)<br>
+            • Axially loaded members<br>
+            • Torsion of circular shafts<br>
+            • Bending of beams and shear diagrams<br>
+            • Deflection of beams<br>
+            • Combined loading and Mohr's circle<br>
+            • Failure criteria and safety factors</p>
+
+            <h3>Usage</h3>
+            <p>The notes are organized to be used alongside a standard Mechanics of Materials textbook and problem sets. They emphasize the physical intuition behind formulas, step-by-step solution structure, and common pitfalls on typical exam-style questions.</p>
+        `,
+        links: [
+            { text: "Open Mechanics of Materials PDF", url: "assets/resume/Mechanics_of_Materials.pdf", type: "primary" }
+        ]
+    }
 };
 
 // Modal functionality
