@@ -595,9 +595,9 @@ const projectData = {
     }
 
     ,7: {
-        title: "Mechanics of Materials Notes",
+        title: "Mechanics of Materials",
         placeholder: "Mechanics of Materials",
-        description: "Comprehensive Mechanics of Materials notes and worked examples from MAE 3270, covering stress, strain, beams, torsion, and failure criteria.",
+        description: "Comprehensive Mechanics of Materials notes and worked examples from MAE 3270, covering stress, strain, beams, torsion, and failure criteria for a beam in bending.",
         tech: ["Mechanics of Materials", "Course Notes", "LaTeX / PDF"],
         images: [],
         details: `
@@ -614,6 +614,31 @@ const projectData = {
         `,
         links: [
             { text: "Open Mechanics of Materials PDF", url: "assets/resume/Mechanics_of_Materials.pdf", type: "primary" }
+        ]
+    },
+
+    8: {
+        title: "Fluid Mechanics: Fluidic Machine Dissection",
+        placeholder: "Fluid Mechanics Weed-Wacker Dissection",
+        description: "Comprehensive final project for MAE 3230 (Introductory Fluid Mechanics) course. This project involved dissecting a weed-eater, then describing the fluid mechanics of the machine using comprehensive vocabulary, then creating a script and making a short-video.",
+        tech: ["Fluid Mechanics", "Hardware Intuition", "Video Editing"],
+        images: [],
+        details: `
+            <h3>Project Overview</h3>
+            <p>This comprehensive final project for MAE 3230 (Introductory Fluid Mechanics) involved dissecting a weed-eater (weed-wacker) and analyzing its fluid mechanics principles. The project required describing the fluid mechanics of the machine using comprehensive vocabulary, creating a script, and producing a short video presentation.</p>
+            
+            <h3>Key Features</h3>
+            <p>• Hardware dissection and analysis<br>
+            • Fluid mechanics principles application<br>
+            • Technical vocabulary and documentation<br>
+            • Script writing and video production<br>
+            • Comprehensive project presentation</p>
+            
+            <h3>Technical Implementation</h3>
+            <p>The project involved hands-on dissection of a weed-eater to understand its internal fluid mechanics, including how fluids (air, fuel, exhaust) flow through the system. The analysis required applying course concepts to real-world machinery, including Bernoulli's equation, the hydrostatic equation, and static principles.</p>
+        `,
+        links: [
+            { text: "View Video", url: "https://www.youtube.com/watch?v=e2QJt-J_BOo&authuser=0", type: "primary" }
         ]
     }
 };
