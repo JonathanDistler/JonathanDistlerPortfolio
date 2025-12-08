@@ -599,7 +599,11 @@ const projectData = {
         placeholder: "Mechanics of Materials",
         description: "Comprehensive Mechanics of Materials notes and worked examples from MAE 3270, covering stress, strain, beams, torsion, and failure criteria for a beam in bending.",
         tech: ["Mechanics of Materials", "ANSYS", "Matlab","Granta"],
-        images: [],
+        images: [
+            { src: "images/Stress_concentration.png", caption: "Stress Concentration Analysis" },
+            { src: "images/constraints.png", caption: "Boundary Conditions and Constraints" },
+            { src: "images/total_strain.png", caption: "Total Strain Distribution" }
+        ],
         details: `
             <h3>Overview</h3>
             <p>This PDF collects my Mechanics of Materials final project results from MAE 3270, including key derivations, formulas, and ANSYS outputs. It is intended as a concise explanation on the relationship between beam-bending theory and FEA methodology.</p>
@@ -622,7 +626,10 @@ const projectData = {
         placeholder: "Fluid Mechanics",
         description: "Comprehensive final project for MAE 3230 (Introductory Fluid Mechanics) course. This project involved dissecting a weed-eater, then describing the fluid mechanics of the machine using comprehensive vocabulary, then creating a script and making a short-video.",
         tech: ["Fluid Mechanics", "Hardware Intuition", "Video Editing"],
-        images: [],
+        images: [
+            { src: "images/bernoulli_graph.png", caption: "Bernoulli's Equation Graphical Analysis" },
+            { src: "images/bernoulli_eq.png", caption: "Bernoulli's Equation Derivation" }
+        ],
         details: `
             <h3>Project Overview</h3>
             <p>This comprehensive final project for MAE 3230 (Introductory Fluid Mechanics) involved dissecting a weed-eater (weed-wacker) and analyzing its fluid mechanics principles. The project required describing the fluid mechanics of the machine using comprehensive vocabulary, creating a script, and producing a short video presentation.</p>
@@ -644,7 +651,11 @@ const projectData = {
         placeholder: "System Dynamics",
         description: "Linear Quadratic Regulator (LQR) control system implementation for stabilizing a ball on a ramp, demonstrating advanced control theory and system dynamics.",
         tech: ["Control Systems", "LQR", "Advanced System Dynamics", "MATLAB"],
-        images: [],
+        images: [
+            { src: "images/Ball_on_Beam_FBDs.png", caption: "Free Body Diagrams for Ball on Beam System" },
+            { src: "images/Ball_on_Beam_Model.png", caption: "System Dynamics Model" },
+            { src: "images/ball_beam_solution.png", caption: "LQR Control Solution" }
+        ],
         details: `
             <h3>Project Overview</h3>
             <p>This project implements a Linear Quadratic Regulator (LQR) control system to stabilize a ball on a ramp via an applied torque, mimicing a linear-actuator. The LQR controller is an optimal control method that minimizes a quadratic cost function, providing an elegant solution to the control problem.</p>
