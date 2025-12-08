@@ -595,7 +595,7 @@ const projectData = {
     }
 
     ,7: {
-        title: "Mechanics of Materials",
+        title: "Mechanics of Materials (MAE 3270): Torque Wrench Analysis",
         placeholder: "MAE 3270: Torque Wrench Analysis",
         description: "Comprehensive Mechanics of Materials notes and worked examples from MAE 3270, covering stress, strain, beams, torsion, and failure criteria for a beam in bending.",
         tech: ["Mechanics of Materials", "ANSYS", "Matlab","Granta"],
@@ -618,7 +618,7 @@ const projectData = {
     },
 
     8: {
-        title: "Fluid Mechanics: Fluidic Machine Dissection",
+        title: "Fluid Mechanics (MAE 3230): Fluidic Machine Dissection",
         placeholder: "MAE 3230: Fluid Mechanics Weed-Wacker Dissection",
         description: "Comprehensive final project for MAE 3230 (Introductory Fluid Mechanics) course. This project involved dissecting a weed-eater, then describing the fluid mechanics of the machine using comprehensive vocabulary, then creating a script and making a short-video.",
         tech: ["Fluid Mechanics", "Hardware Intuition", "Video Editing"],
@@ -640,7 +640,7 @@ const projectData = {
         ]
     },
     9: {
-        title: "LQR Control of Ball on a Ramp",
+        title: "System Dynamics (MAE 3260): LQR Control of Ball on a Ramp",
         placeholder: "MAE 3260 Final Report: LQR Control of Ball on a Ramp",
         description: "Linear Quadratic Regulator (LQR) control system implementation for stabilizing a ball on a ramp, demonstrating advanced control theory and system dynamics.",
         tech: ["Control Systems", "LQR", "System Dynamics", "MATLAB"],
