@@ -643,7 +643,7 @@ const projectData = {
         title: "System Dynamics (MAE 3260): LQR Control of Ball on a Ramp",
         placeholder: "MAE 3260 Final Report: LQR Control of Ball on a Ramp",
         description: "Linear Quadratic Regulator (LQR) control system implementation for stabilizing a ball on a ramp, demonstrating advanced control theory and system dynamics.",
-        tech: ["Control Systems", "LQR", "System Dynamics", "MATLAB"],
+        tech: ["Control Systems", "LQR", "Advanced System Dynamics", "MATLAB"],
         images: [],
         details: `
             <h3>Project Overview</h3>
@@ -658,79 +658,111 @@ const projectData = {
             
             <h3>Technical Implementation</h3>
             <p>The project involves modeling the ball-on-ramp system using state-space equations, designing an LQR controller to stabilize the system, and analyzing the closed-loop performance. The implementation demonstrates understanding of modern control theory and optimal control techniques.</p>
-
+        `,
         links: [
             { text: "Open PDF Report", url: "assets/resume/Report_Portfolio.pdf", type: "primary" }
         ]
     }
 };
 
-// Modal functionality
-const modal = document.getElementById('projectModal');
-const closeBtn = document.querySelector('.close');
-const projectExpandBtns = document.querySelectorAll('.project-expand-btn');
+// Modal functionality - use event delegation to ensure buttons work
+let modal, closeBtn, imageModal, imageCloseBtn, enlargedImage, imageCaption;
 
-// Image enlargement modal
-const imageModal = document.getElementById('imageModal');
-const imageCloseBtn = document.querySelector('.image-close');
-const enlargedImage = document.getElementById('enlargedImage');
-const imageCaption = document.getElementById('imageCaption');
-
-// Open modal when project expand button is clicked
-projectExpandBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-        const projectCard = this.closest('.project-card');
-        const projectId = projectCard.getAttribute('data-project');
-        openProjectModal(projectId);
+document.addEventListener('DOMContentLoaded', function() {
+    // Get modal elements
+    modal = document.getElementById('projectModal');
+    closeBtn = document.querySelector('.close');
+    imageModal = document.getElementById('imageModal');
+    imageCloseBtn = document.querySelector('.image-close');
+    enlargedImage = document.getElementById('enlargedImage');
+    imageCaption = document.getElementById('imageCaption');
+    
+    // Use event delegation for project expand buttons (works for dynamically added buttons)
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('project-expand-btn')) {
+            const projectCard = event.target.closest('.project-card');
+            if (projectCard) {
+                const projectId = projectCard.getAttribute('data-project');
+                openProjectModal(projectId);
+            }
+        }
+    });
+    
+    // Close modal when X is clicked
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeProjectModal);
+    }
+    
+    // Image modal close
+    if (imageCloseBtn) {
+        imageCloseBtn.addEventListener('click', closeImageModal);
+    }
+    
+    // Close modal when clicking outside of it
+    if (modal) {
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closeProjectModal();
+            }
+        });
+    }
+    
+    // Close image modal when clicking outside of it
+    if (imageModal) {
+        window.addEventListener('click', function(event) {
+            if (event.target === imageModal) {
+                closeImageModal();
+            }
+        });
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            if (modal && modal.style.display === 'block') {
+                closeProjectModal();
+            }
+            if (imageModal && imageModal.style.display === 'block') {
+                closeImageModal();
+            }
+        }
     });
 });
 
-// Close modal when X is clicked
-closeBtn.addEventListener('click', closeProjectModal);
-
-// Close modal when clicking outside of it
-window.addEventListener('click', function(event) {
-    if (event.target === modal) {
-        closeProjectModal();
-    }
-});
-
-// Close modal with Escape key
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape' && modal.style.display === 'block') {
-        closeProjectModal();
-    }
-    if (event.key === 'Escape' && imageModal.style.display === 'block') {
-        closeImageModal();
-    }
-});
-
-// Image enlargement functionality
-imageCloseBtn.addEventListener('click', closeImageModal);
-
-// Close image modal when clicking outside of it
-window.addEventListener('click', function(event) {
-    if (event.target === imageModal) {
-        closeImageModal();
-    }
-});
-
 function openImageModal(imageSrc, caption) {
-    enlargedImage.src = imageSrc;
-    enlargedImage.alt = caption;
-    imageCaption.textContent = caption;
-    imageModal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
+    if (!imageModal) {
+        imageModal = document.getElementById('imageModal');
+        enlargedImage = document.getElementById('enlargedImage');
+        imageCaption = document.getElementById('imageCaption');
+    }
+    if (enlargedImage && imageCaption && imageModal) {
+        enlargedImage.src = imageSrc;
+        enlargedImage.alt = caption;
+        imageCaption.textContent = caption;
+        imageModal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 function closeImageModal() {
-    imageModal.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    if (!imageModal) {
+        imageModal = document.getElementById('imageModal');
+    }
+    if (imageModal) {
+        imageModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
 }
 
 function openProjectModal(projectId) {
     const project = projectData[projectId];
     if (!project) return;
+    
+    // Ensure modal is available
+    if (!modal) {
+        modal = document.getElementById('projectModal');
+    }
+    if (!modal) return;
 
     // Populate modal content
     document.getElementById('modalTitle').textContent = project.title;
@@ -815,8 +847,13 @@ function openProjectModal(projectId) {
 
 
 function closeProjectModal() {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Restore scrolling
+    if (!modal) {
+        modal = document.getElementById('projectModal');
+    }
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
 }
 
 console.log('Personal website loaded successfully! 🚀');
