@@ -559,7 +559,7 @@ const projectData = {
             <p>The design process was multi-faceted with individual work, team work, and biweekly meetings in which improvements were shared and options were considered to optimize the performance of the structures.</p>
         `,
         links: [
-            { text: "View Details", url: "#", type: "primary" }
+            { text: "Open Hyperloop PDF", url: "assets/resume/Hyperloop_FA_25.pdf", type: "primary" }
         ]
     }
 
