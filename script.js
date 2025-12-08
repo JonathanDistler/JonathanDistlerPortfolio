@@ -653,7 +653,7 @@ const projectData = {
         tech: ["Control Systems", "LQR", "Advanced System Dynamics", "MATLAB"],
         images: [
             { src: "images/Ball_on_Beam_FBDs.png", caption: "Free Body Diagrams for Ball on Beam System" },
-            { src: "images/Ball_on_Beam_Model.png", caption: "System Dynamics Model" },
+            { src: "images/Ball_on_Beam_Model.png", caption: "Rigid Body Dynamics Model" },
             { src: "images/ball_beam_solution.png", caption: "LQR Control Solution" }
         ],
         details: `
