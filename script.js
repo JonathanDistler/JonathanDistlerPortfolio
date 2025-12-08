@@ -631,11 +631,9 @@ const projectData = {
             <p>• Hardware dissection and analysis<br>
             • Fluid mechanics principles application<br>
             • Technical vocabulary and documentation<br>
-            • Script writing and video production<br>
-            • Comprehensive project presentation</p>
             
             <h3>Technical Implementation</h3>
-            <p>The project involved hands-on dissection of a weed-eater to understand its internal fluid mechanics, including how fluids (air, fuel, exhaust) flow through the system. The analysis required applying course concepts to real-world machinery, including Bernoulli's equation, the hydrostatic equation, and static principles.</p>
+            <p>The project involved hands-on dissection of a weed-eater to understand its internal fluid mechanics, including how fluids (air, fuel, exhaust) flow through the system. The analysis required applying course concepts to real-world machinery, including Bernoulli's equation, the hydrostatic equation, and the Venturi effect.</p>
         `,
         links: [
             { text: "View Video", url: "https://www.youtube.com/watch?v=e2QJt-J_BOo&authuser=0", type: "primary" }
