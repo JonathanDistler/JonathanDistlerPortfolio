@@ -596,9 +596,9 @@ const projectData = {
 
     ,7: {
         title: "Mechanics of Materials",
-        placeholder: "Mechanics of Materials",
+        placeholder: "MAE 3270: Torque Wrench Analysis",
         description: "Comprehensive Mechanics of Materials notes and worked examples from MAE 3270, covering stress, strain, beams, torsion, and failure criteria for a beam in bending.",
-        tech: ["Mechanics of Materials", "Course Notes", "LaTeX / PDF"],
+        tech: ["Mechanics of Materials", "ANSYS", "Matlab","Granta"],
         images: [],
         details: `
             <h3>Overview</h3>
@@ -619,7 +619,7 @@ const projectData = {
 
     8: {
         title: "Fluid Mechanics: Fluidic Machine Dissection",
-        placeholder: "Fluid Mechanics Weed-Wacker Dissection",
+        placeholder: "MAE 3230: Fluid Mechanics Weed-Wacker Dissection",
         description: "Comprehensive final project for MAE 3230 (Introductory Fluid Mechanics) course. This project involved dissecting a weed-eater, then describing the fluid mechanics of the machine using comprehensive vocabulary, then creating a script and making a short-video.",
         tech: ["Fluid Mechanics", "Hardware Intuition", "Video Editing"],
         images: [],
@@ -637,6 +637,30 @@ const projectData = {
         `,
         links: [
             { text: "View Video", url: "https://www.youtube.com/watch?v=e2QJt-J_BOo&authuser=0", type: "primary" }
+        ]
+    },
+    9: {
+        title: "LQR Control of Ball on a Ramp",
+        placeholder: "MAE 3260 Final Report: LQR Control of Ball on a Ramp",
+        description: "Linear Quadratic Regulator (LQR) control system implementation for stabilizing a ball on a ramp, demonstrating advanced control theory and system dynamics.",
+        tech: ["Control Systems", "LQR", "System Dynamics", "MATLAB"],
+        images: [],
+        details: `
+            <h3>Project Overview</h3>
+            <p>This project implements a Linear Quadratic Regulator (LQR) control system to stabilize a ball on a ramp via an applied torque, mimicing a linear-actuator. The LQR controller is an optimal control method that minimizes a quadratic cost function, providing an elegant solution to the control problem.</p>
+            
+            <h3>Key Features</h3>
+            <p>• LQR controller design and implementation<br>
+            • System dynamics modeling<br>
+            • State-space representation<br>
+            • Stability analysis<br>
+            • Performance optimization</p>
+            
+            <h3>Technical Implementation</h3>
+            <p>The project involves modeling the ball-on-ramp system using state-space equations, designing an LQR controller to stabilize the system, and analyzing the closed-loop performance. The implementation demonstrates understanding of modern control theory and optimal control techniques.</p>
+
+        links: [
+            { text: "Open PDF Report", url: "assets/resume/Report_Portfolio.pdf", type: "primary" }
         ]
     }
 };
