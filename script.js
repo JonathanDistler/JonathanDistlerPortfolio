@@ -624,7 +624,7 @@ const projectData = {
     8: {
         title: "Fluid Mechanics (MAE 3230): Fluidic Machine Dissection",
         placeholder: "Fluid Mechanics",
-        description: "Comprehensive final project for MAE 3230 (Introductory Fluid Mechanics) course. This project involved dissecting a weed-eater, then describing the fluid mechanics of the machine using comprehensive vocabulary, then creating a script and making a short-video.",
+        description: "Comprehensive final project for MAE 3230 (Introductory Fluid Mechanics) course. This project involved dissecting a weed-eater, then describing the fluid mechanics of the machine using comprehensive vocabulary, then developing a script and making a short-video.",
         tech: ["Fluid Mechanics", "Hardware Intuition", "Video Editing"],
         images: [
             { src: "images/bernoulli_graph.png", caption: "Bernoulli's Equation Graphical Analysis" },
@@ -640,7 +640,7 @@ const projectData = {
             • Technical vocabulary and documentation<br>
             
             <h3>Technical Implementation</h3>
-            <p>The project involved hands-on dissection of a weed-eater to understand its internal fluid mechanics, including how fluids (air, fuel, exhaust) flow through the system. The analysis required applying course concepts to real-world machinery, including Bernoulli's equation, the hydrostatic equation, and the Venturi effect.</p>
+            <p>The project involved hands-on dissection of a weed-eater to understand its internal fluid mechanics, including how fluids (air, fuel, exhaust) flow through the system. And how the user-inputs into the system, such as higher or lower throttle map to area differences at the throat and an appropriate amount of fuel being mixed into oncoming air flow. We also investigated the role of the two-stroke internal combustion engine, and provided a relevant calculation given real-world measurements from our weed-wacker. The analysis required applying course concepts to real-world machinery, including Bernoulli's equation, the hydrostatic equation, and the Venturi effect.</p>
         `,
         links: [
             { text: "View Video", url: "https://www.youtube.com/watch?v=e2QJt-J_BOo&authuser=0", type: "primary" }
@@ -868,6 +868,7 @@ function closeProjectModal() {
 }
 
 console.log('Personal website loaded successfully! 🚀');
+
 
 
 
