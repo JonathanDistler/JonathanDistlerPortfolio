@@ -631,9 +631,6 @@ const projectData = {
             { src: "images/bernoulli_eq.png", caption: "Bernoulli's Equation Derivation" }
         ],
         details: `
-            <h3>Project Overview</h3>
-            <p>This comprehensive final project for MAE 3230 (Introductory Fluid Mechanics) involved dissecting a weed-eater (weed-wacker) and analyzing its fluid mechanics principles. The project required describing the fluid mechanics of the machine using comprehensive vocabulary, creating a script, and producing a short video presentation.</p>
-            
             <h3>Key Features</h3>
             <p>• Hardware dissection and analysis<br>
             • Fluid mechanics principles application<br>
@@ -868,6 +865,7 @@ function closeProjectModal() {
 }
 
 console.log('Personal website loaded successfully! 🚀');
+
 
 
 
