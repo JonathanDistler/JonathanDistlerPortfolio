@@ -370,6 +370,22 @@ section {
     overflow: hidden;
 }
 
+/* When background image is present, the inline style will override - just ensure no gradient interference */
+.project-image[style*="background-image"] {
+    /* Inline style takes precedence, this just ensures proper layering */
+}
+
+.project-image[style*="background-image"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
 .project-img {
     width: 100%;
     height: 100%;
@@ -385,6 +401,9 @@ section {
     color: white;
     font-size: 1.2rem;
     font-weight: 500;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .project-content {
