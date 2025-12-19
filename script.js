@@ -381,7 +381,7 @@ revealElements.forEach(element => {
 // Project data for modal
 const projectData = {
     1: {
-        title: "Soft Fish Tail",
+        title: "Soft Fish (SoFi) Prototype",
         placeholder: "Soft Fish Tail",
         description: "Soft robotic fish tail optimization project for ETH Zurich SRL, featuring computer vision analysis, MuJoCo simulation, and experimental validation.",
         tech: ["Python", "MATLAB", "C++", "MuJoCo", "Computer Vision"],
@@ -524,7 +524,7 @@ const projectData = {
     }
 
     ,5: {
-        title: "Hyperloop Project",
+        title: "Hyperloop Project Team",
         placeholder: "Hyperloop Project Team",
         description: "Cornell Project Team developing novel techniques and technologies to be implemented within the Hyperloop framework, such as battery-pack enclosures, wire-harnesses, and micro-controller holders",
         tech: ["CAD Design", "Prototyping", "DFX", "Testing Protocols"],
@@ -564,7 +564,7 @@ const projectData = {
     }
 
     ,6: {
-        title: "Household CAD",
+        title: "Household CAD Practice",
         placeholder: "Household CAD Practice",
         description: "Development of a 1:1 CAD to real-world model of a Seiko Arabic Dial Watch",
         tech: ["CAD Design", "Prototyping", "DFX", "Testing Protocols"],
