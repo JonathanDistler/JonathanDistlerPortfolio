@@ -723,6 +723,30 @@ const projectData = {
         links: [
             { text: "Open PDF Report", url: "assets/resume/Report_Portfolio.pdf", type: "primary" }
         ]
+    },
+    10: {
+        title: "HRC2 Project",
+        placeholder: "HRC2 Project",
+        description: "Human-Robot Collaboration project focusing on advanced robotics research and development.",
+        tech: ["Robotics", "Human-Robot Interaction", "ROS 2", "Python"],
+        images: [],
+        details: `
+            <h3>Project Overview</h3>
+            <p>This project involves research and development in human-robot collaboration, focusing on creating effective interaction systems between humans and robotic systems.</p>
+            
+            <h3>Key Features</h3>
+            <p>• Human-robot interaction research<br>
+            • ROS 2 implementation<br>
+            • Advanced robotics development<br>
+            • Collaborative task planning<br>
+            • Real-world testing and validation</p>
+            
+            <h3>Technical Implementation</h3>
+            <p>The project utilizes ROS 2 for robot communication and control, Python for algorithm development, and focuses on creating seamless human-robot collaborative workflows.</p>
+        `,
+        links: [
+            { text: "Open PDF Report", url: "assets/resume/HRC2_FA25_Report.pdf", type: "primary" }
+        ]
     }
 };
 
