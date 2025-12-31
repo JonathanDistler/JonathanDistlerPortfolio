@@ -472,10 +472,80 @@ const projectData = {
             <p>The test setup image shows the actual experimental configuration used for validating the soft robotic tail performance, including the computer vision system and data collection equipment.</p>
         `,
         links: [
-            { text: "GitHub Repository", url: "https://github.com/JonathanDistler/SoftFishTail", type: "primary" }
+            { text: "GitHub Repository", url: "https://github.com/JonathanDistler/SoftFishTail", type: "primary" },
+            { text: "Open PDF", url: "assets/resume/Distler_ETHZ_Writeup.pdf", type: "primary" }
         ]
     },
     2: {
+        title: "Adversary GPS Setup",
+        placeholder: "Aerospace Adversary GPS Setup",
+        description: "Experimental testing setup as a part of the Cornell Aerospace Adversary Lab. Involved the implementation of a GPS-localization system to accurately measure (and filter) positional data of a drone",
+        tech: ["CAD Design", "Prototyping", "DFX", "Testing Protocols"],
+        images: [
+            { src: "images/gps_submap.png", caption: "GPS Setup" },
+            { src: "images/example_positional_readout.png", caption: "Example Positional Data" }
+        ],
+        details: `
+            <h3>Project Overview</h3>
+            <p>This GPS setup involved the use of the Marvelmind system. The system needed to be configured to maximize the space between the stationary beacons (at a minimum of 3m), while avoiding the constraints of the laboratory including poor line-of-sight, sharp corners, and general clutter, all of which would invalidate the experimental results. </p>
+            
+            <h3>Key Features</h3>
+            <p>
+            • Room Modeling<br>
+            • Realistic CAD Portrayls<br>
+            • 3D-Printing<br>
+            • Acoustic Principles</p>
+
+            <h3>Innovation Impact</h3>
+            <p>This GPS setup represents a very unique system in which research can be conducted at a very small-scale without losing the accuracy of larger setups. This provdides a baseline for decentralized research centers. </p>
+            
+            <h3>Design Process</h3>
+            <p>The project follows a physics-based approach from start to finish. It required reading posted literature by the Marvelmind team to understand the acoustics of the setup, then it required developing a physics intutition to accurately position the beacons. Then, it required real-time serial communication and data-analysis in Python (as well as a basic tolerancing filter) to display the results. </p>
+        
+        `,
+        links: [
+            { text: "GitHub Repository", url: "https://github.com/JonathanDistler/MarvelmindModularization", type: "primary" },
+            { text: "Open PDF", url: "assets/resume/AdversaryFA25.pdf", type: "primary" }
+        ]
+    },
+    3: {
+        title: "Hyperloop Project Team",
+        placeholder: "Hyperloop Project Team",
+        description: "Cornell Project Team developing novel techniques and technologies to be implemented within the Hyperloop framework, such as battery-pack enclosures, wire-harnesses, and micro-controller holders",
+        tech: ["CAD Design", "Prototyping", "DFX", "Testing Protocols"],
+        images: [
+            { src: "images/microcontroller_holder.png", caption: "Micro-Controller Holders" },
+            { src: "images/hyperloop_pod.png", caption: "Hyperloop Carbon-Fiber Aeroshell" },
+            { src: "images/wire_harnesses.png", caption: "Snap-Fit Wire Harnesses" },
+            { src: "images/battery_pack_fea.png", caption: "Battery Pack Enclosure FEA" },
+            { src: "images/battery_pack_top.png", caption: "Top View of Battery Pack Enclosure" },
+            { src: "images/battery_pack_front.png", caption: "Front View of Battery Pack Enclosure" }
+        ],
+        details: `
+            <h3>Project Overview</h3>
+            <p>This project represents a more hand-on approach to the engineering methodology. This project is multi-faceted with derivations influencing the design of the battery pack enclosure, machining brackets and other supports for the hyperloop pod, and helping to create a carbon-fiber aeroshell. </p>
+            
+            <h3>Key Features</h3>
+            <p>• Statics Derivations<br>
+            • CAD<br>
+            • Technical Writing<br>
+            • FEA<br>
+            • Documentation of design process<br>
+            • Machining and 3D Printing<br>
+            • Carbon-Fiber Usage</p>
+            
+            <h3>Design Process</h3>
+            <p>The project follows a rigorous mathematics based process through and through. For the battery pack enclosure, multiple designs were thought of, analogous statics setups were created, and FEA was implemented as a check on the stress and strain of the acrylic. For the micro-controller holders and wire-harnesses, precise CAD techniques were used to match the contours of the pod and provide precise tolerancing for the parts. </p>
+            
+            <h3>Innovation Impact</h3>
+            <p>This project hopes to build on previously developed work on "mag-lev" locomotion to develop more energy efficient and faster transport. It also provides an R&D opportunity to develop new technologies in interdisciplinary fields. </p>
+            
+        `,
+        links: [
+            { text: "Open Hyperloop PDF", url: "assets/resume/Hyperloop_FA_25.pdf", type: "primary" }
+        ]
+    },
+    4: {
         title: "Game of Life Simulation",
         placeholder: "Game of Life",
         description: "Interactive cellular automaton simulation with custom rule sets, featuring multiple generation tracking and Conway's Game of Life implementation.",
@@ -508,7 +578,7 @@ const projectData = {
             { text: "Play Simulation", url: "checkerboard.html", type: "embed" }
         ]
     },
-    3: {
+    5: {
         title: "Original Design Prototype",
         placeholder: "Design Prototype",
         description: "Innovative design prototype showcasing creative engineering solutions and novel approaches to complex technical challenges.",
@@ -543,78 +613,6 @@ const projectData = {
         `,
         links: [
             { text: "View Details", url: "#", type: "primary" }
-        ]
-    }
-
-    ,4: {
-        title: "Adversary GPS Setup",
-        placeholder: "Aerospace Adversary GPS Setup",
-        description: "Experimental testing setup as a part of the Cornell Aerospace Adversary Lab. Involved the implementation of a GPS-localization system to accurately measure (and filter) positional data of a drone",
-        tech: ["CAD Design", "Prototyping", "DFX", "Testing Protocols"],
-        images: [
-            { src: "images/gps_submap.png", caption: "GPS Setup" },
-            { src: "images/example_positional_readout.png", caption: "Example Positional Data" }
-        ],
-        details: `
-            <h3>Project Overview</h3>
-            <p>This GPS setup involved the use of the Marvelmind system. The system needed to be configured to maximize the space between the stationary beacons (at a minimum of 3m), while avoiding the constraints of the laboratory including poor line-of-sight, sharp corners, and general clutter, all of which would invalidate the experimental results. </p>
-            
-            <h3>Key Features</h3>
-            <p>
-            • Room Modeling<br>
-            • Realistic CAD Portrayls<br>
-            • 3D-Printing<br>
-            • Acoustic Principles</p>
-
-            <h3>Innovation Impact</h3>
-            <p>This GPS setup represents a very unique system in which research can be conducted at a very small-scale without losing the accuracy of larger setups. This provdides a baseline for decentralized research centers. </p>
-            
-            <h3>Design Process</h3>
-            <p>The project follows a physics-based approach from start to finish. It required reading posted literature by the Marvelmind team to understand the acoustics of the setup, then it required developing a physics intutition to accurately position the beacons. Then, it required real-time serial communication and data-analysis in Python (as well as a basic tolerancing filter) to display the results. </p>
-        
-        `,
-        links: [
-            { text: "GitHub Repository", url: "https://github.com/JonathanDistler/MarvelmindModularization", type: "primary" }
-        ]
-    }
-
-    ,5: {
-        title: "Hyperloop Project Team",
-        placeholder: "Hyperloop Project Team",
-        description: "Cornell Project Team developing novel techniques and technologies to be implemented within the Hyperloop framework, such as battery-pack enclosures, wire-harnesses, and micro-controller holders",
-        tech: ["CAD Design", "Prototyping", "DFX", "Testing Protocols"],
-        images: [
-            { src: "images/microcontroller_holder.png", caption: "Micro-Controller Holders" },
-            { src: "images/hyperloop_pod.png", caption: "Hyperloop Carbon-Fiber Aeroshell" },
-            { src: "images/wire_harnesses.png", caption: "Snap-Fit Wire Harnesses" },
-            { src: "images/battery_pack_fea.png", caption: "Battery Pack Enclosure FEA" },
-            { src: "images/battery_pack_top.png", caption: "Top View of Battery Pack Enclosure" },
-            { src: "images/battery_pack_front.png", caption: "Front View of Battery Pack Enclosure" }
-        ],
-        details: `
-            <h3>Project Overview</h3>
-            <p>This project represents a more hand-on approach to the engineering methodology. This project is multi-faceted with derivations influencing the design of the battery pack enclosure, machining brackets and other supports for the hyperloop pod, and helping to create a carbon-fiber aeroshell. </p>
-            
-            <h3>Key Features</h3>
-            <p>• Statics Derivations<br>
-            • CAD<br>
-            • Technical Writing<br>
-            • FEA<br>
-            • Documentation of design process<br>
-            • Machining and 3D Printing<br>
-            • Carbon-Fiber Usage</p>
-            
-            <h3>Design Process</h3>
-            <p>The project follows a rigorous mathematics based process through and through. For the battery pack enclosure, multiple designs were thought of, analogous statics setups were created, and FEA was implemented as a check on the stress and strain of the acrylic. For the micro-controller holders and wire-harnesses, precise CAD techniques were used to match the contours of the pod and provide precise tolerancing for the parts. </p>
-            
-            <h3>Innovation Impact</h3>
-            <p>This project hopes to build on previously developed work on "mag-lev" locomotion to develop more energy efficient and faster transport. It also provides an R&D opportunity to develop new technologies in interdisciplinary fields. </p>
-            
-            <h3>Design Process</h3>
-            <p>The design process was multi-faceted with individual work, team work, and biweekly meetings in which improvements were shared and options were considered to optimize the performance of the structures.</p>
-        `,
-        links: [
-            { text: "Open Hyperloop PDF", url: "assets/resume/Hyperloop_FA_25.pdf", type: "primary" }
         ]
     }
 
