@@ -362,28 +362,12 @@ section {
 
 .project-image {
     height: 200px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #a8d5e2 0%, #7fb3d3 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-}
-
-/* When background image is present, the inline style will override - just ensure no gradient interference */
-.project-image[style*="background-image"] {
-    /* Inline style takes precedence, this just ensures proper layering */
-}
-
-.project-image[style*="background-image"]::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
 }
 
 .project-img {

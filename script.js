@@ -254,6 +254,61 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Animated light blue oscillating background for project cards
+document.addEventListener('DOMContentLoaded', () => {
+    const projectImages = document.querySelectorAll('.project-image');
+    if (projectImages.length === 0) return;
+
+    let animationId = null;
+    let startTime = performance.now();
+
+    function hsl(h, s, l) {
+        return `hsl(${h}, ${s}%, ${l}%)`;
+    }
+
+    function animate(now) {
+        const t = (now - startTime) / 1000; // seconds
+        // Light blue oscillating between cyan-blue hues
+        const hueCenter = 195;       // light blue/cyan midpoint
+        const hueAmplitude = 15;     // swing range (lighter than hero)
+        const speed = 0.3;           // cycles per second
+
+        const hue1 = hueCenter + hueAmplitude * Math.sin(2 * Math.PI * speed * t);
+        const hue2 = hueCenter - hueAmplitude * Math.sin(2 * Math.PI * speed * t + Math.PI / 6);
+
+        // Lighter saturation and higher lightness for a softer look
+        const color1 = hsl(hue1.toFixed(1), 50, 75);
+        const color2 = hsl(hue2.toFixed(1), 45, 70);
+
+        const gradient = `linear-gradient(135deg, ${color1} 0%, ${color2} 100%)`;
+        
+        projectImages.forEach(img => {
+            img.style.background = gradient;
+        });
+        
+        animationId = requestAnimationFrame(animate);
+    }
+
+    function start() {
+        if (animationId == null) {
+            startTime = performance.now();
+            animationId = requestAnimationFrame(animate);
+        }
+    }
+
+    function stop() {
+        if (animationId != null) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
+    }
+
+    start();
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop(); else start();
+    });
+});
+
 // Canvas sine waves oscillating background
 document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('heroWaves');
