@@ -546,6 +546,30 @@ const projectData = {
         ]
     },
     4: {
+        title: "HRC2: Human Robot Interaction",
+        placeholder: "HRC2 Project",
+        description: "Project as part of the Human-Robot Collaboration and Companionship Laboratory at Cornell University. My work involved developing a PDDL to represent a cooking task. Then, implementing an algorithm to follow the solved action space using the Stretch RE1 robot.",
+        tech: ["Hello Robot", "Robotic Hardware", "ROS 2", "PDDL"],
+        images: [],
+        details: `
+            <h3>Project Overview</h3>
+            <p>This project is part of the Human-Robot Collaboration and Companionship Laboratory at Cornell University. My work involved developing a PDDL (Planning Domain Definition Language) to represent a cooking task, then implementing an algorithm to follow the solved action space using the Stretch RE1 robot.</p>
+            
+            <h3>Key Features</h3>
+            <p>• PDDL domain and problem definition for cooking tasks<br>
+            • Action space planning and execution<br>
+            • Stretch RE1 robot integration<br>
+            • ROS 2 implementation<br>
+            • Human-robot collaborative task planning</p>
+            
+            <h3>Technical Implementation</h3>
+            <p>The project utilizes PDDL for task planning, ROS 2 for robot communication and control, and focuses on creating effective human-robot collaborative workflows using the Hello Robot Stretch RE1 platform.</p>
+        `,
+        links: [
+            { text: "Open PDF Report", url: "assets/resume/HRC2_FA25_Report.pdf", type: "primary" }
+        ]
+    },
+    5: {
         title: "Game of Life Simulation",
         placeholder: "Game of Life",
         description: "Interactive cellular automaton simulation with custom rule sets, featuring multiple generation tracking and Conway's Game of Life implementation.",
@@ -578,7 +602,7 @@ const projectData = {
             { text: "Play Simulation", url: "checkerboard.html", type: "embed" }
         ]
     },
-    5: {
+    6: {
         title: "Original Design Prototype",
         placeholder: "Design Prototype",
         description: "Innovative design prototype showcasing creative engineering solutions and novel approaches to complex technical challenges.",
@@ -614,9 +638,8 @@ const projectData = {
         links: [
             { text: "View Details", url: "#", type: "primary" }
         ]
-    }
-
-    ,6: {
+    },
+    7: {
         title: "Household CAD Practice",
         placeholder: "Household CAD Practice",
         description: "Development of a 1:1 CAD to real-world model of a Seiko Arabic Dial Watch",
@@ -645,9 +668,8 @@ const projectData = {
         links: [
             { text: "View Details", url: "#", type: "primary" }
         ]
-    }
-
-    ,7: {
+    },
+    8: {
         title: "Mechanics of Materials (MAE 3270): Torque Wrench Analysis",
         placeholder: "Mechanics of Materials",
         description: "Comprehensive Mechanics of Materials notes and worked examples from MAE 3270, covering stress, strain, beams, torsion, and failure criteria for a beam in bending.",
@@ -673,8 +695,7 @@ const projectData = {
             { text: "Open Mechanics of Materials PDF", url: "assets/resume/Mechanics_of_Materials.pdf", type: "primary" }
         ]
     },
-
-    8: {
+    9: {
         title: "Fluid Mechanics (MAE 3230): Fluidic Machine Dissection",
         placeholder: "Fluid Mechanics",
         description: "Comprehensive final project for MAE 3230 (Introductory Fluid Mechanics) course. This project involved dissecting a weed-eater, then describing the fluid mechanics of the machine using comprehensive vocabulary, then developing a script and making a short-video.",
@@ -696,7 +717,7 @@ const projectData = {
             { text: "View Video", url: "https://www.youtube.com/watch?v=e2QJt-J_BOo&authuser=0", type: "primary" }
         ]
     },
-    9: {
+    10: {
         title: "System Dynamics (MAE 3260): LQR Control of Ball on a Ramp",
         placeholder: "System Dynamics",
         description: "Linear Quadratic Regulator (LQR) control system implementation for stabilizing a ball on a ramp, demonstrating advanced control theory and system dynamics.",
@@ -722,30 +743,6 @@ const projectData = {
         `,
         links: [
             { text: "Open PDF Report", url: "assets/resume/Report_Portfolio.pdf", type: "primary" }
-        ]
-    },
-    10: {
-        title: "HRC2 Project",
-        placeholder: "HRC2 Project",
-        description: "Human-Robot Collaboration project focusing on advanced robotics research and development.",
-        tech: ["Robotics", "Human-Robot Interaction", "ROS 2", "Python"],
-        images: [],
-        details: `
-            <h3>Project Overview</h3>
-            <p>This project involves research and development in human-robot collaboration, focusing on creating effective interaction systems between humans and robotic systems.</p>
-            
-            <h3>Key Features</h3>
-            <p>• Human-robot interaction research<br>
-            • ROS 2 implementation<br>
-            • Advanced robotics development<br>
-            • Collaborative task planning<br>
-            • Real-world testing and validation</p>
-            
-            <h3>Technical Implementation</h3>
-            <p>The project utilizes ROS 2 for robot communication and control, Python for algorithm development, and focuses on creating seamless human-robot collaborative workflows.</p>
-        `,
-        links: [
-            { text: "Open PDF Report", url: "assets/resume/HRC2_FA25_Report.pdf", type: "primary" }
         ]
     }
 };
