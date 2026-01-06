@@ -451,7 +451,7 @@ const projectData = {
         ],
         details: `
             <h3>Project Overview</h3>
-            <p>This project was developed during my summer internship at ETH Zurich's Soft Robotics Laboratory (SRL). I was tasked with optimizing a soft-robotic tail for force-output and fish maneuverability, with a focus on creating an iterative design program for tail dimension optimization. Much of the research is still proprietary and under research, so images can't be shown! </p>
+            <p>This project was developed during my summer internship at ETH Zurich's Soft Robotics Laboratory (SRL). I was tasked with optimizing a soft-robotic tail for force-output and fish maneuverability, with a focus on creating an iterative design program for tail dimension optimization.  </p>
             
             <h3>Key Features</h3>
             <p>• Computer vision analysis for tail curvature measurement<br>
@@ -714,7 +714,7 @@ const projectData = {
             <p>The project involved hands-on dissection of a weed-eater to understand its internal fluid mechanics, including how fluids (air, fuel, exhaust) flow through the system. And how the user-inputs into the system, such as higher or lower throttle map to area differences within the carburetor, and an appropriate amount of fuel being mixed into oncoming air flow. We also investigated the role of the two-stroke internal combustion engine, and provided a relevant calculation given real-world measurements from our weed-wacker. The analysis required applying course concepts to real-world machinery, including Bernoulli's equation, the hydrostatic equation, and the Venturi effect.</p>
         `,
         links: [
-            { text: "View Video", url: "https://www.youtube.com/watch?v=e2QJt-J_BOo&authuser=0", type: "primary" }
+            { text: "View Video", url: "https://www.youtube.com/watch?v=ayXWChBD-kg", type: "primary" }
         ]
     },
     10: {
