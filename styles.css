@@ -645,6 +645,41 @@ section {
     text-align: left;
 }
 
+.reading-year-buttons {
+    margin: 1.5rem 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.reading-year-btn {
+    padding: 10px 24px !important;
+    font-size: 0.95rem !important;
+    border: 2px solid #667eea !important;
+    background-color: white !important;
+    color: #667eea !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reading-year-btn:hover {
+    background-color: #667eea !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.reading-year-btn.active {
+    background-color: #667eea !important;
+    color: white !important;
+    border-color: #667eea !important;
+}
+
+.books-section {
+    animation: fadeIn 0.3s ease-in;
+}
+
 .books-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

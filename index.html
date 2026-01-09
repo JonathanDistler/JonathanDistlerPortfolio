@@ -549,9 +549,15 @@
                     <div class="interest-card reading-card">
                         <div class="interest-icon">📚</div>
                         <h3>Reading</h3>
-                        <p>I'm an avid reader! Whenever I get the opportunity I try to read, even if that means it's first thing in the morning. Here are all the books I've read this year:</p>
+                        <p>I'm an avid reader! Whenever I get the opportunity I try to read, even if that means it's first thing in the morning. Here are all the books I've read:</p>
                         
-                        <div class="books-grid">
+                        <div class="reading-year-buttons">
+                            <button class="btn btn-primary reading-year-btn active" data-year="2025-2026">2025-2026</button>
+                            <button class="btn btn-primary reading-year-btn" data-year="2026-2027">2026-2027</button>
+                        </div>
+                        
+                        <div class="books-section" id="books-2025-2026">
+                            <div class="books-grid">
                             <div class="book-category">
                                 <h4>Mystery & Crime</h4>
                                 <ul class="book-list">
@@ -601,13 +607,48 @@
                                     <li>The Case for Nukes by Robert Zubrin</li>
                                 </ul>
                             </div>
-                            
-                            <div class="book-category current-reading">
-                                <h4>Currently Reading</h4>
-                                <ul class="book-list">
-                                    <li class="current-book">Mathematics for the Nonmathematician by Morris Kline</li>
-                                    <li class="current-book">The Star Builders by Arthur Turrell</li>
-                                </ul>
+                        </div>
+                        </div>
+                        
+                        <div class="books-section" id="books-2026-2027" style="display: none;">
+                            <div class="books-grid">
+                                <div class="book-category">
+                                    <h4>Mystery & Crime</h4>
+                                    <ul class="book-list">
+                                    </ul>
+                                </div>
+                                
+                                <div class="book-category">
+                                    <h4>Fantasy & Adventure</h4>
+                                    <ul class="book-list">
+                                    </ul>
+                                </div>
+                                
+                                <div class="book-category">
+                                    <h4>Philosophy & Literature</h4>
+                                    <ul class="book-list">
+                                    </ul>
+                                </div>
+                                
+                                <div class="book-category">
+                                    <h4>Contemporary Fiction</h4>
+                                    <ul class="book-list">
+                                    </ul>
+                                </div>
+                                
+                                <div class="book-category">
+                                    <h4>Non-Fiction & Self-Development</h4>
+                                    <ul class="book-list">
+                                    </ul>
+                                </div>
+                                
+                                <div class="book-category current-reading">
+                                    <h4>Currently Reading</h4>
+                                    <ul class="book-list">
+                                        <li class="current-book">Mathematics for the Nonmathematician by Morris Kline</li>
+                                        <li class="current-book">The Star Builders by Arthur Turrell</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

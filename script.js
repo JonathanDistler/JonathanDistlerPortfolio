@@ -938,6 +938,42 @@ function closeProjectModal() {
     }
 }
 
+// Reading year toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const yearButtons = document.querySelectorAll('.reading-year-btn');
+    
+    yearButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetYear = this.getAttribute('data-year');
+            
+            // Remove active class from all buttons
+            yearButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Hide all books sections
+            document.querySelectorAll('.books-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show the selected year's books section
+            const targetSection = document.getElementById(`books-${targetYear}`);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+            }
+        });
+    });
+    
+    // Ensure 2025-2026 is shown by default
+    const defaultSection = document.getElementById('books-2025-2026');
+    if (defaultSection) {
+        defaultSection.style.display = 'block';
+    }
+});
+
 console.log('Personal website loaded successfully! 🚀');
 
 
