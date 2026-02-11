@@ -411,9 +411,14 @@ section {
     font-size: 0.38rem;
 }
 
-/* Game of Life – cubes + ODP house */
+/* Game of Life – cubes */
 .gameoflife-ascii {
-    font-size: 0.35rem;
+    font-size: 0.4rem;
+}
+
+/* Original Design Prototype – ODP house */
+.odp-ascii {
+    font-size: 0.6rem;
 }
 
 /* Household CAD – Unicode watch art */
