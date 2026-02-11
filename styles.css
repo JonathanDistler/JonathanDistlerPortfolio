@@ -411,6 +411,34 @@ section {
     font-size: 0.38rem;
 }
 
+/* Game of Life – cubes + ODP house */
+.gameoflife-ascii {
+    font-size: 0.35rem;
+}
+
+/* Household CAD – Unicode watch art */
+.household-cad-ascii {
+    font-size: 0.3rem;
+    line-height: 1.05;
+}
+
+/* Torque wrench – Unicode block art */
+.torque-wrench-ascii {
+    font-size: 0.28rem;
+    line-height: 1.05;
+}
+
+/* System Dynamics – ball/ramp shape */
+.systems-ascii {
+    font-size: 0.55rem;
+}
+
+/* Fluid Mechanics – Unicode flow art */
+.fluids-ascii {
+    font-size: 0.3rem;
+    line-height: 1.05;
+}
+
 .project-img {
     width: 100%;
     height: 100%;
