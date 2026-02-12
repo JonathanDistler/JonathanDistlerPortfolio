@@ -429,13 +429,14 @@ section {
 
 /* Torque wrench – Unicode block art */
 .torque-wrench-ascii {
-    font-size: 0.28rem;
+    font-size: 0.22rem;
     line-height: 1.05;
 }
 
-/* System Dynamics – ball/ramp shape */
+/* System Dynamics – ball on ramp Unicode art */
 .systems-ascii {
-    font-size: 0.55rem;
+    font-size: 0.2rem;
+    line-height: 1.05;
 }
 
 /* Fluid Mechanics – Unicode flow art */
