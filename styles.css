@@ -510,11 +510,6 @@ section {
     align-items: center;
 }
 
-/* Keep Learn More on the right when possible */
-.project-links .project-expand-btn {
-    margin-left: auto;
-}
-
 .project-link {
     color: #667eea;
     text-decoration: none;
