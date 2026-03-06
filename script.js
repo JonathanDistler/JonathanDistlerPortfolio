@@ -744,6 +744,28 @@ const projectData = {
         links: [
             { text: "Open PDF Report", url: "assets/resume/Report_Portfolio.pdf", type: "primary" }
         ]
+    },
+    11: {
+        title: "Heat Transfer (MAE 3240): Problem Set Discussion and Derivation",
+        placeholder: "Heat Transfer",
+        description: "Project as a part of MAE 3240 (Heat Transfer). This project describes a derivation of a problem set question, as well as some of the takeaways from the problem set.",
+        tech: ["Heat Transfer", "Figma", "Scientific Writing"],
+        images: [],
+        details: `
+            <h3>Project as a part of MAE 3240 (Heat Transfer).</h3>
+            <p>This project describes a derivation of a problem set question, as well as some of the takeaways from the problem set.</p>
+            
+            <h3>Key Features</h3>
+            <p>• Figma designed graphic<br>
+            • Fourier analysis heat transfer methodology including Kirchhoff's law</p>
+            
+            <h3>Technical Implementation</h3>
+            <p>This project involved a mathematical derivation using 1D, steady-state approximations of a heat-transfer phenomena involving convection and radiation. This project also included work on improvizational learning tactics, and rules-of-thumb regarding heat transfer modes in different systems</p>
+        `,
+        links: [
+            { text: "Write-up PDF", url: "assets/resume/heat_transfer_write_up.pdf", type: "primary" },
+            { text: "Original Homework PDF", url: "assets/resume/Problem_set_1.pdf", type: "primary" }
+        ]
     }
 };
 
