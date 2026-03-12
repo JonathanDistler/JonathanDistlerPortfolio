@@ -551,6 +551,10 @@ const projectData = {
         description: "Project as part of the Human-Robot Collaboration and Companionship Laboratory at Cornell University. My work involved developing a PDDL to represent a cooking task. Then, implementing an algorithm to follow the solved action space using the Stretch RE1 robot.",
         tech: ["Hello Robot", "Robotic Hardware", "ROS 2", "PDDL"],
         images: [],
+        videos: [
+            { src: "C:\\Users\\jonat\\Downloads\\RVIZ.mp4", caption: "RVIZ example" },
+            { src: "C:\\Users\\jonat\\Downloads\\AutonomousNav.mp4", caption: "Nav2 Stack example" }
+        ],
         details: `
             <h3>Project Overview</h3>
             <p>This project is part of the Human-Robot Collaboration and Companionship Laboratory at Cornell University. My work involved developing a PDDL (Planning Domain Definition Language) to represent a cooking task, then implementing an algorithm to follow the solved action space using the Stretch RE1 robot.</p>
