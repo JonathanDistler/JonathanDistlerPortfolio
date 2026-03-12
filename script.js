@@ -552,8 +552,8 @@ const projectData = {
         tech: ["Hello Robot", "Robotic Hardware", "ROS 2", "PDDL"],
         images: [],
         videos: [
-            { src: "C:\\Users\\jonat\\Downloads\\RVIZ.mp4", caption: "RVIZ example" },
-            { src: "C:\\Users\\jonat\\Downloads\\AutonomousNav.mp4", caption: "Nav2 Stack example" }
+            { src: "assets/videos/RVIZ.mp4", caption: "RVIZ example" },
+            { src: "assets/videos/AutonomousNav.mp4", caption: "Nav2 Stack example" }
         ],
         details: `
             <h3>Project Overview</h3>
