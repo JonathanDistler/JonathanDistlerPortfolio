@@ -998,6 +998,57 @@ document.addEventListener('DOMContentLoaded', function() {
     if (defaultSection) {
         defaultSection.style.display = 'block';
     }
+
+    // Blog title toggle functionality
+    const blogButtons = document.querySelectorAll('.blog-title-btn');
+    blogButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetBlogId = this.getAttribute('data-blog');
+
+            // Remove active class from all blog buttons
+            blogButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Add active class to clicked button
+            this.classList.add('active');
+
+            // Hide all blog sections
+            document.querySelectorAll('.blog-post-section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show the selected blog section
+            const targetSection = document.getElementById(`blog-${targetBlogId}`);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+            }
+        });
+    });
+
+    // Ensure the first blog post is shown by default
+    const defaultBlogSection = document.getElementById('blog-artificial-intelligence-0325');
+    if (defaultBlogSection) {
+        defaultBlogSection.style.display = 'block';
+    }
+
+    // Load blog post HTML fragments from the Blog/ folder
+    const blogContentContainers = document.querySelectorAll('[data-blog-src]');
+    blogContentContainers.forEach(async container => {
+        const src = container.getAttribute('data-blog-src');
+        if (!src) return;
+
+        try {
+            const res = await fetch(src);
+            if (!res.ok) {
+                throw new Error(`HTTP ${res.status}`);
+            }
+            container.innerHTML = await res.text();
+        } catch (err) {
+            container.innerHTML = '<p>Failed to load blog post.</p>';
+            console.error('Blog load failed:', err);
+        }
+    });
 });
 
 console.log('Personal website loaded successfully! 🚀');

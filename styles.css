@@ -755,6 +755,58 @@ section {
     border-color: #667eea !important;
 }
 
+/* Blog Section Styles */
+.blog-card {
+    grid-column: 1 / -1;
+    text-align: left;
+}
+
+.blog-title-buttons {
+    margin: 1.5rem 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.blog-title-btn {
+    padding: 10px 24px !important;
+    font-size: 0.95rem !important;
+    border: 2px solid #667eea !important;
+    background-color: white !important;
+    color: #667eea !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: normal;
+}
+
+.blog-title-btn:hover {
+    background-color: #667eea !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.blog-title-btn.active {
+    background-color: #667eea !important;
+    color: white !important;
+    border-color: #667eea !important;
+}
+
+.blog-post-section {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.blog-post-content {
+    margin-top: 1.25rem;
+}
+
+.blog-post-content p {
+    font-size: 1.02rem;
+    color: #4a5568;
+    line-height: 1.8;
+}
+
 .books-section {
     animation: fadeIn 0.3s ease-in;
 }
