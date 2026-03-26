@@ -1020,35 +1020,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Show the selected blog section
             const targetSection = document.getElementById(`blog-${targetBlogId}`);
-            if (targetSection) {
+            if (!targetSection) return;
+
+            // Lazy-load the essay HTML the first time it's opened
+            const blogContentContainer = targetSection.querySelector('[data-blog-src]');
+            if (!blogContentContainer) return;
+
+            const src = blogContentContainer.getAttribute('data-blog-src');
+            const alreadyLoaded = blogContentContainer.dataset.loaded === 'true';
+
+            if (alreadyLoaded) {
+                // If we already have the HTML, show immediately
                 targetSection.style.display = 'block';
+                return;
             }
+
+            // Keep the section hidden while fetching, so "Loading..." isn't visible.
+            targetSection.style.display = 'none';
+            if (!src) return;
+
+            blogContentContainer.innerHTML = 'Loading...';
+            fetch(src)
+                .then(res => {
+                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                    return res.text();
+                })
+                .then(html => {
+                    blogContentContainer.innerHTML = html;
+                    blogContentContainer.dataset.loaded = 'true';
+                    targetSection.style.display = 'block';
+                })
+                .catch(err => {
+                    blogContentContainer.innerHTML = '<p>Failed to load blog post.</p>';
+                    console.error('Blog load failed:', err);
+                    targetSection.style.display = 'block';
+                });
         });
     });
 
-    // Ensure the first blog post is shown by default
-    const defaultBlogSection = document.getElementById('blog-artificial-intelligence-0325');
-    if (defaultBlogSection) {
-        defaultBlogSection.style.display = 'block';
-    }
-
-    // Load blog post HTML fragments from the Blog/ folder
-    const blogContentContainers = document.querySelectorAll('[data-blog-src]');
-    blogContentContainers.forEach(async container => {
-        const src = container.getAttribute('data-blog-src');
-        if (!src) return;
-
-        try {
-            const res = await fetch(src);
-            if (!res.ok) {
-                throw new Error(`HTTP ${res.status}`);
-            }
-            container.innerHTML = await res.text();
-        } catch (err) {
-            container.innerHTML = '<p>Failed to load blog post.</p>';
-            console.error('Blog load failed:', err);
-        }
-    });
+    // Note: blog content is intentionally lazy-loaded on click
 });
 
 console.log('Personal website loaded successfully! 🚀');
