@@ -486,7 +486,7 @@ const projectData = {
             { src: "images/example_positional_readout.png", caption: "Example Positional Data" }
         ],
         videos: [
-            { src: "images/LowLatency.mp4", caption: "Marvelmind Localization" }
+            { src: "assets/videos/LowLatency.mp4", caption: "Marvelmind Localization" }
         ],
         details: `
             <h3>Project Overview</h3>
