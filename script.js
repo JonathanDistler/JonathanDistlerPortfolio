@@ -485,6 +485,9 @@ const projectData = {
             { src: "images/gps_submap.png", caption: "GPS Setup" },
             { src: "images/example_positional_readout.png", caption: "Example Positional Data" }
         ],
+        videos: [
+            { src: "images/LowLatency.mp4", caption: "Marvelmind Localization" }
+        ],
         details: `
             <h3>Project Overview</h3>
             <p>This GPS setup involved the use of the Marvelmind system. The system needed to be configured to maximize the space between the stationary beacons (at a minimum of 3m), while avoiding the constraints of the laboratory including poor line-of-sight, sharp corners, and general clutter, all of which would invalidate the experimental results. </p>
@@ -505,7 +508,6 @@ const projectData = {
         `,
         links: [
             { text: "GitHub Repository", url: "https://github.com/JonathanDistler/AerospaceAdversarySP26/tree/main", type: "primary" },
-            { text: "LowLatency.mp4", url: "assets/videos/LowLatency.mp4", type: "primary" },
             { text: "Open PDF", url: "assets/resume/AdversaryFA25.pdf", type: "primary" }
         ]
     },
