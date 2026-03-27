@@ -504,7 +504,8 @@ const projectData = {
         
         `,
         links: [
-            { text: "GitHub Repository", url: "https://github.com/JonathanDistler/MarvelmindModularization", type: "primary" },
+            { text: "GitHub Repository", url: "https://github.com/JonathanDistler/AerospaceAdversarySP26/tree/main", type: "primary" },
+            { text: "LowLatency.mp4", url: "assets/videos/LowLatency.mp4", type: "primary" },
             { text: "Open PDF", url: "assets/resume/AdversaryFA25.pdf", type: "primary" }
         ]
     },
