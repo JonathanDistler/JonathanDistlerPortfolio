@@ -1002,66 +1002,6 @@ document.addEventListener('DOMContentLoaded', function() {
         defaultSection.style.display = 'block';
     }
 
-    // Blog title toggle functionality
-    const blogButtons = document.querySelectorAll('.blog-title-btn');
-    blogButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const targetBlogId = this.getAttribute('data-blog');
-
-            // Remove active class from all blog buttons
-            blogButtons.forEach(btn => {
-                btn.classList.remove('active');
-            });
-
-            // Add active class to clicked button
-            this.classList.add('active');
-
-            // Hide all blog sections
-            document.querySelectorAll('.blog-post-section').forEach(section => {
-                section.style.display = 'none';
-            });
-
-            // Show the selected blog section
-            const targetSection = document.getElementById(`blog-${targetBlogId}`);
-            if (!targetSection) return;
-
-            // Lazy-load the essay HTML the first time it's opened
-            const blogContentContainer = targetSection.querySelector('[data-blog-src]');
-            if (!blogContentContainer) return;
-
-            const src = blogContentContainer.getAttribute('data-blog-src');
-            const alreadyLoaded = blogContentContainer.dataset.loaded === 'true';
-
-            if (alreadyLoaded) {
-                // If we already have the HTML, show immediately
-                targetSection.style.display = 'block';
-                return;
-            }
-
-            // Keep the section hidden while fetching, so "Loading..." isn't visible.
-            targetSection.style.display = 'none';
-            if (!src) return;
-
-            blogContentContainer.innerHTML = 'Loading...';
-            fetch(src)
-                .then(res => {
-                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                    return res.text();
-                })
-                .then(html => {
-                    blogContentContainer.innerHTML = html;
-                    blogContentContainer.dataset.loaded = 'true';
-                    targetSection.style.display = 'block';
-                })
-                .catch(err => {
-                    blogContentContainer.innerHTML = '<p>Failed to load blog post.</p>';
-                    console.error('Blog load failed:', err);
-                    targetSection.style.display = 'block';
-                });
-        });
-    });
-
-    // Note: blog content is intentionally lazy-loaded on click
 });
 
 console.log('Personal website loaded successfully! 🚀');
