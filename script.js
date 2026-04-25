@@ -783,6 +783,24 @@ const projectData = {
 // Modal functionality - use event delegation to ensure buttons work
 let modal, closeBtn, imageModal, imageCloseBtn, enlargedImage, imageCaption;
 
+function bindProjectExpandButtons() {
+    const expandButtons = document.querySelectorAll('.project-expand-btn');
+    expandButtons.forEach(button => {
+        if (button.dataset.boundExpand === 'true') return;
+
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            const projectCard = this.closest('.project-card');
+            if (!projectCard) return;
+            const projectId = projectCard.getAttribute('data-project');
+            openProjectModal(projectId);
+        });
+
+        button.dataset.boundExpand = 'true';
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Get modal elements
     modal = document.getElementById('projectModal');
@@ -803,6 +821,9 @@ document.addEventListener('DOMContentLoaded', function() {
             openProjectModal(projectId);
         }
     });
+
+    // Direct per-button binding as a fallback to guarantee clicks open modal.
+    bindProjectExpandButtons();
     
     // Close modal when X is clicked
     if (closeBtn) {
@@ -970,6 +991,14 @@ function closeProjectModal() {
         modal.style.display = 'none';
         document.body.style.overflow = 'auto'; // Restore scrolling
     }
+}
+
+// Expose modal opener globally for robustness/debugging and bind immediately.
+window.openProjectModal = openProjectModal;
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindProjectExpandButtons);
+} else {
+    bindProjectExpandButtons();
 }
 
 // Reading year toggle functionality
