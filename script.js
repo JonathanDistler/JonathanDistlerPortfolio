@@ -548,7 +548,7 @@ const projectData = {
             
         `,
         links: [
-            { text: "Open Hyperloop FA-25 Report PDF", url: "assets/resume/Hyperloop_FA_25.pdf", type: "primary" }
+            { text: "Open Hyperloop FA-25 Report PDF", url: "assets/resume/Hyperloop_FA_25.pdf", type: "primary" },
             { text: "Open Hyperloop SP-26 Aeroshell Technical Report PDF", url: "assets/resume/SQ5_Aero_Paper.pdf", type: "primary" }
         ]
     },
