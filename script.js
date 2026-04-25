@@ -488,7 +488,8 @@ const projectData = {
             { src: "images/example_positional_readout.png", caption: "Example Positional Data" }
         ],
         videos: [
-            { src: "assets/videos/LowLatency.mp4", caption: "Marvelmind Localization" }
+            { src: "assets/videos/LowLatency.mp4", caption: "Marvelmind Localization" },
+            { src: "assets/videos/drone_autonomous_flight.mp4", caption: "Drone Autonomous Flight" }
         ],
         details: `
             <h3>Project Overview</h3>
