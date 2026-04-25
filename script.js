@@ -447,7 +447,9 @@ const projectData = {
             { src: "images/dynamic_deriv.png", caption: "Dynamical Derivation for Tail Angle" }
         ],
         videos: [
-            { src: "images/Fish_Force_Test_8_30.mp4", caption: "Force Test Video" }
+            { src: "images/Fish_Force_Test_8_30.mp4", caption: "Force Test Video" },
+            { src: "assets/videos/full_fish_tail_ETHZ.MOV", caption: "Full Fish Tail (ETH Zurich)" },
+            { src: "assets/videos/fish_tail_control_dynamixel_ETHZ.MOV", caption: "Fish Tail Control with Dynamixel (ETH Zurich)" }
         ],
         details: `
             <h3>Project Overview</h3>
@@ -622,6 +624,9 @@ const projectData = {
             { src: "images/Chair_sketch.png", caption: "Initial Sketches" },
             { src: "images/CAD_Chair_render.png", caption: "CAD Render" },
             { src: "images/Chair_full.png", caption: "Complete Prototype" }
+        ],
+        videos: [
+            { src: "assets/videos/ODP_test.MOV", caption: "ODP Test Video" }
         ],
         details: `
             <h3>Project Overview</h3>
@@ -891,6 +896,14 @@ function closeImageModal() {
     }
 }
 
+function getVideoMimeType(videoSrc) {
+    const lowerSrc = (videoSrc || '').toLowerCase();
+    if (lowerSrc.endsWith('.mov')) return 'video/quicktime';
+    if (lowerSrc.endsWith('.webm')) return 'video/webm';
+    if (lowerSrc.endsWith('.ogg') || lowerSrc.endsWith('.ogv')) return 'video/ogg';
+    return 'video/mp4';
+}
+
 function openProjectModal(projectId) {
     const project = projectData[projectId];
     if (!project) return;
@@ -940,11 +953,12 @@ function openProjectModal(projectId) {
     // Add videos
     if (project.videos && project.videos.length > 0) {
         project.videos.forEach(video => {
+            const videoMimeType = getVideoMimeType(video.src);
             const videoCard = document.createElement('div');
             videoCard.className = 'modal-video-card';
             videoCard.innerHTML = `
                 <video class="modal-video" controls>
-                    <source src="${video.src}" type="video/mp4">
+                    <source src="${video.src}" type="${videoMimeType}">
                     Your browser does not support the video tag.
                 </video>
                 <div class="modal-video-caption">${video.caption}</div>
