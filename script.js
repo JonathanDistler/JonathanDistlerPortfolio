@@ -783,7 +783,32 @@ const projectData = {
             { text: "Write-up PDF", url: "assets/resume/heat_transfer_write_up.pdf", type: "primary" },
             { text: "Original Homework PDF", url: "assets/resume/Problem_set_1.pdf", type: "primary" }
         ]
-    }
+    },
+
+    12: {
+    title: "Mechatronics Project",
+    placeholder: "Mechatronics",
+    description: "Project is a part of MAE 3780 (Mechatronics). This project describes the process involved in the annual ASML Robot Competition in which teams compete to develop autonomous robots to pick up as many blocks as possible in a 1 minute time-frame.",
+    tech: ["Mechatronics", "C", "Circuitry Design"],
+    images: [],
+    details: `
+        <h3>Mechatronics System Overview</h3>
+        <p>This project explores my contributions to the design and implementation of mechanical systems with electronics and control logic.</p>
+
+        <h3>Key Features</h3>
+        <p>• Sensor integration<br>
+        • Actuator control<br>
+        • Feedback loop implementation
+        • H-Bridges for coordinated motor control
+        </p>
+
+        <h3>Technical Implementation</h3>
+        <p>The system involved the use of a color sensor to detect the natural frequency (and period) of particular colors in the competition environment. Then, using a hand-derived algorithm, the robot would move accordingly depending on its world-view of the environment. The project also involved my personal designs of a passive arm structure to pick up blocks with many specifications influened via previous work in soft-robotics and control theory. </p>
+    `,
+    links: [
+        { text: "Write-up PDF", url: "assets/resume/mechatronics_write_up.pdf", type: "primary" }
+    ]
+}
 };
 
 // Modal functionality - use event delegation to ensure buttons work

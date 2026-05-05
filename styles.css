@@ -451,6 +451,12 @@ section {
     line-height: 1.05;
 }
 
+.mechatronics-ascii {
+    max-width: 30%;
+    overflow-x: auto; /* or hidden if you want strict containment */
+    white-space: pre;
+}
+
 .project-img {
     width: 100%;
     height: 100%;
