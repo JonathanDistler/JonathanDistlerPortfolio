@@ -791,6 +791,9 @@ const projectData = {
     description: "Project is a part of MAE 3780 (Mechatronics). This project describes the process involved in the annual ASML Robot Competition in which teams compete to develop autonomous robots to pick up as many blocks as possible in a 1 minute time-frame.",
     tech: ["Mechatronics", "C", "Circuitry Design"],
     images: [],
+    videos: [
+            { src: "assets/videos/robot_video.mp4", caption: "Robot Functionality Example" },
+        ],
     details: `
         <h3>Mechatronics System Overview</h3>
         <p>This project explores my contributions to the design and implementation of mechanical systems with electronics and control logic.</p>

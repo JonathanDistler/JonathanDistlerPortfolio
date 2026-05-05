@@ -451,11 +451,12 @@ section {
     line-height: 1.05;
 }
 
-.mechatronics-ascii {
-    max-width: 30%;
-    overflow-x: auto; /* or hidden if you want strict containment */
-    white-space: pre;
+/* Mechatronics – ASCII critter */
+.mechatronics-ascii{
+    font-size: 0.6rem;
+    line-height: 1.05;
 }
+
 
 .project-img {
     width: 100%;
