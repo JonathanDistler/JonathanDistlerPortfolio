@@ -580,7 +580,7 @@ const projectData = {
             <p>The project utilizes PDDL for task planning, ROS 2 for robot communication and control, and focuses on creating effective human-robot collaborative workflows using the Hello Robot Stretch RE1 platform.</p>
         `,
         links: [
-            { text: "Open PDF Report", url: "assets/resume/HRC2_FA25_Report.pdf", type: "primary" }
+            { text: "Open PDF Report", url: "assets/resume/HRC2_SP26.pdf", type: "primary" }
         ]
     },
     5: {
