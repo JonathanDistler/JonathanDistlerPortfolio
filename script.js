@@ -520,9 +520,6 @@ const projectData = {
         description: "Cornell Project Team developing novel techniques and technologies to be implemented within the Hyperloop framework, such as battery-pack enclosures, wire-harnesses, and micro-controller holders",
         tech: ["CAD Design", "Prototyping", "DFX", "Testing Protocols"],
         images: [
-            { src: "images/sq5_aeroshell.png", caption: "SQ5 Aeroshell" },
-            { src: "images/sq5_aeroshell.jpg", caption: "SQ5 Aeroshell" },
-            { src: "images/sq5_aeroshell.jpeg", caption: "SQ5 Aeroshell" },
             { src: "images/microcontroller_holder.png", caption: "Micro-Controller Holders" },
             { src: "images/hyperloop_pod.png", caption: "Hyperloop Carbon-Fiber Aeroshell" },
             { src: "images/wire_harnesses.png", caption: "Snap-Fit Wire Harnesses" },
