@@ -475,7 +475,8 @@ const projectData = {
         `,
         links: [
             { text: "GitHub Repository", url: "https://github.com/JonathanDistler/SoftFishTail", type: "primary" },
-            { text: "Open PDF", url: "assets/resume/Distler_ETHZ_Writeup.pdf", type: "primary" }
+            { text: "Open PDF", url: "assets/resume/Distler_ETHZ_Writeup.pdf", type: "primary" },
+            { text: "Swim Platform PDF", url: "assets/resume/Distler_SRL_SwimPlatform.pdf", type: "primary" }
         ]
     },
     2: {
@@ -549,7 +550,8 @@ const projectData = {
         `,
         links: [
             { text: "Open Hyperloop FA-25 Report PDF", url: "assets/resume/Hyperloop_FA_25.pdf", type: "primary" },
-            { text: "Open Hyperloop SP-26 Aeroshell Technical Report PDF", url: "assets/resume/SQ5_Aero_Paper.pdf", type: "primary" }
+            { text: "Open Hyperloop SP-26 Aeroshell Technical Report PDF", url: "assets/resume/SQ5_Aero_Paper.pdf", type: "primary" },
+            { text: "Hyperloop Changes PDF", url: "assets/resume/Hyperloop_Changes.pdf", type: "primary" }
         ]
     },
     4: {
