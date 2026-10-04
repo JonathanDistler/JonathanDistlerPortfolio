@@ -436,9 +436,9 @@ revealElements.forEach(element => {
 // Project data for modal
 const projectData = {
     1: {
-        title: "Soft Fish (SoFi) Prototype",
+        title: "Soft Robotic Fish",
         placeholder: "Soft Fish Tail",
-        description: "Soft robotic fish tail optimization project for ETH Zurich SRL, featuring computer vision analysis, MuJoCo simulation, and experimental validation.",
+        description: "I modeled tail dynamics in MuJoCo, optimized geometry with Nelder–Mead, and checked the model against computer-vision curvature and thrust data.",
         tech: ["Python", "MATLAB", "C++", "MuJoCo", "Computer Vision"],
         images: [
             { src: "images/test_setup.png", caption: "Experimental Test Setup" },
@@ -465,7 +465,7 @@ const projectData = {
             • Real-time data collection and analysis</p>
             
             <h3>Technical Implementation</h3>
-            <p>The project combines Python for data analysis and computer vision, MATLAB for simulation and optimization algorithms, and C++ for hardware control. The MuJoCo physics engine provides accurate simulation of the soft robotic tail dynamics, while computer vision tracks real-world performance.</p>
+            <p>The project combines Python for data analysis and computer vision, MATLAB for simulation and optimization algorithms, and C++ for hardware control. The MuJoCo physics engine provides a dynamical model of the soft robotic tail, while computer vision tracks real-world curvature so the model can be checked against experiment.</p>
             
             <h3>Research Impact</h3>
             <p>This work contributes to the field of soft robotics by providing a systematic approach to optimizing soft robotic fish tails. The novel actuation method (based on scotch-yoke principles) along with the iterative design program helps researchers select optimal tail configurations based on user-specific radius-of-curvature requirements.</p>
@@ -480,9 +480,9 @@ const projectData = {
         ]
     },
     2: {
-        title: "Adversary GPS Setup",
+        title: "Magpie Indoor Localization",
         placeholder: "Aerospace Adversary GPS Setup",
-        description: "Experimental testing setup as a part of the Cornell Aerospace Adversary Lab. Involved the implementation of a GPS-localization system to accurately measure (and filter) positional data of a drone",
+        description: "I modeled the lab volume for beacon placement, then fused indoor GPS telemetry in ROS 2 to localize a drone in both simulation and hardware.",
         tech: ["CAD Design", "Prototyping", "DFX", "Testing Protocols"],
         images: [
             { src: "images/gps_submap.png", caption: "GPS Setup" },
@@ -499,15 +499,15 @@ const projectData = {
             <h3>Key Features</h3>
             <p>
             • Room Modeling<br>
-            • Realistic CAD Portrayls<br>
+            • Realistic CAD Portrayals<br>
             • 3D-Printing<br>
             • Acoustic Principles</p>
 
             <h3>Innovation Impact</h3>
-            <p>This GPS setup represents a very unique system in which research can be conducted at a very small-scale without losing the accuracy of larger setups. This provdides a baseline for decentralized research centers. </p>
+            <p>This GPS setup is a small-scale localization model that keeps centimeter-level accuracy, which is useful as a baseline for decentralized research labs.</p>
             
             <h3>Design Process</h3>
-            <p>The project follows a physics-based approach from start to finish. It required reading posted literature by the Marvelmind team to understand the acoustics of the setup, then it required developing a physics intutition to accurately position the beacons. Then, it required real-time serial communication and data-analysis in Python (as well as a basic tolerancing filter) to display the results. </p>
+            <p>The project follows a physics-based modeling approach from start to finish. I used Marvelmind acoustics literature to place beacons, then streamed serial data into Python with a tolerance filter so the positional model could be plotted in real time.</p>
         
         `,
         links: [
@@ -516,9 +516,9 @@ const projectData = {
         ]
     },
     3: {
-        title: "Hyperloop Project Team",
+        title: "Cornell Hyperloop",
         placeholder: "Hyperloop Project Team",
-        description: "Cornell Project Team developing novel techniques and technologies to be implemented within the Hyperloop framework, such as battery-pack enclosures, wire-harnesses, and micro-controller holders",
+        description: "I modeled battery-pack heat transfer and enclosure loads in CAD and FEA, then machined and 3D-printed parts for the pod structure.",
         tech: ["CAD Design", "Prototyping", "DFX", "Testing Protocols"],
         images: [
             { src: "images/microcontroller_holder.png", caption: "Micro-Controller Holders" },
@@ -542,7 +542,7 @@ const projectData = {
             • Carbon-Fiber Usage</p>
             
             <h3>Design Process</h3>
-            <p>The project follows a rigorous mathematics based process through and through. For the battery pack enclosure, multiple designs were thought of, analogous statics setups were created, and FEA was implemented as a check on the stress and strain of the acrylic. For the micro-controller holders and wire-harnesses, precise CAD techniques were used to match the contours of the pod and provide precise tolerancing for the parts. </p>
+            <p>The enclosure work started with analogous statics models, then CAD, then ANSYS FEA as a check on acrylic stress and strain. Microcontroller holders and wire harnesses were modeled in CAD to match pod contours and keep tight tolerances.</p>
             
             <h3>Innovation Impact</h3>
             <p>This project hopes to build on previously developed work on "mag-lev" locomotion to develop more energy efficient and faster transport. It also provides an R&D opportunity to develop new technologies in interdisciplinary fields. </p>
@@ -555,9 +555,9 @@ const projectData = {
         ]
     },
     4: {
-        title: "HRC2: Human Robot Interaction",
+        title: "Human–Robot Collaboration",
         placeholder: "HRC2 Project",
-        description: "Project as part of the Human-Robot Collaboration and Companionship Laboratory at Cornell University. My work involved developing a PDDL to represent a cooking task. Then, implementing an algorithm to follow the solved action space using the Stretch RE1 robot.",
+        description: "I modeled a cooking task in PDDL, then executed the planned action sequence on the Stretch RE1 with ROS 2.",
         tech: ["Hello Robot", "Robotic Hardware", "ROS 2", "PDDL"],
         images: [],
         videos: [
@@ -585,7 +585,7 @@ const projectData = {
     5: {
         title: "Game of Life Simulation",
         placeholder: "Game of Life",
-        description: "Interactive cellular automaton simulation with custom rule sets, featuring multiple generation tracking and Conway's Game of Life implementation.",
+        description: "I modeled cellular automata with custom rule sets, tracking colony competition, generations, and board entropy.",
         tech: ["HTML", "JavaScript", "CSS", "Algorithms"],
         images: [
             { src: "images/example_output_1.png", caption: "Example Output of One Stage" },
@@ -618,7 +618,7 @@ const projectData = {
     6: {
         title: "Original Design Prototype",
         placeholder: "Design Prototype",
-        description: "Innovative design prototype showcasing creative engineering solutions and novel approaches to complex technical challenges.",
+        description: "I modeled a foldable gym chair in CAD, checked buckling with beam theory, and built a working prototype from that model.",
         tech: ["CAD Design", "Prototyping", "DFX", "Testing Protocols"],
         images: [
             { src: "images/Chair_sketch.png", caption: "Initial Sketches" },
@@ -656,9 +656,9 @@ const projectData = {
         ]
     },
     7: {
-        title: "Household CAD Practice",
+        title: "Household CAD Watch",
         placeholder: "Household CAD Practice",
-        description: "Development of a 1:1 CAD to real-world model of a Seiko Arabic Dial Watch",
+        description: "I modeled a 1:1 Seiko watch in Fusion 360, constraining every moving part so the CAD assembly matches the real mechanism.",
         tech: ["CAD Design", "Prototyping", "DFX", "Testing Protocols"],
         images: [
             { src: "images/watch_sketch.png", caption: "Seiko Watch Sketch" },
@@ -686,9 +686,9 @@ const projectData = {
         ]
     },
     8: {
-        title: "Mechanics of Materials (MAE 3270): Torque Wrench Analysis",
+        title: "Torque Wrench Analysis",
         placeholder: "Mechanics of Materials",
-        description: "Comprehensive Mechanics of Materials notes and worked examples from MAE 3270, covering stress, strain, beams, torsion, and failure criteria for a beam in bending.",
+        description: "I modeled wrench geometry and materials, compared hand calculations to ANSYS stress–strain results, and sized parts to a high safety factor.",
         tech: ["Mechanics of Materials", "ANSYS", "Matlab","Granta"],
         images: [
             { src: "images/Stress_concentration.png", caption: "Stress Concentration Analysis" },
@@ -697,7 +697,7 @@ const projectData = {
         ],
         details: `
             <h3>Overview</h3>
-            <p>This PDF collects my Mechanics of Materials final project results from MAE 3270, including key derivations, formulas, and ANSYS outputs. It is intended as a concise explanation on the relationship between beam-bending theory and FEA methodology.</p>
+            <p>This write-up collects the MAE 3270 torque-wrench model: derivations, formulas, and ANSYS outputs comparing beam-bending theory with an FEA model of the same geometry.</p>
 
             <h3>Topics Included</h3>
             <p>• Stress and strain (normal)<br>
@@ -712,9 +712,9 @@ const projectData = {
         ]
     },
     9: {
-        title: "Fluid Mechanics (MAE 3230): Fluidic Machine Dissection",
+        title: "Fluidic Machine Dissection",
         placeholder: "Fluid Mechanics",
-        description: "Comprehensive final project for MAE 3230 (Introductory Fluid Mechanics) course. This project involved dissecting a weed-eater, then describing the fluid mechanics of the machine using comprehensive vocabulary, then developing a script and making a short-video.",
+        description: "I modeled airflow through a dissected weed eater with Bernoulli and Venturi relations, then explained the machine in a short video.",
         tech: ["Fluid Mechanics", "Hardware Intuition", "Video Editing"],
         images: [
             { src: "images/bernoulli_graph.png", caption: "Bernoulli's Equation Graphical Analysis" },
@@ -734,9 +734,9 @@ const projectData = {
         ]
     },
     10: {
-        title: "System Dynamics (MAE 3260): LQR Control of Ball on a Ramp",
+        title: "Ball-on-Ramp LQR",
         placeholder: "System Dynamics",
-        description: "Linear Quadratic Regulator (LQR) control system implementation for stabilizing a ball on a ramp, demonstrating advanced control theory and system dynamics.",
+        description: "I derived a rigid-body state-space model of a ball on a ramp and designed an LQR controller to stabilize it.",
         tech: ["Control Systems", "LQR", "Advanced System Dynamics", "MATLAB"],
         images: [
             { src: "images/Ball_on_Beam_FBDs.png", caption: "Free Body Diagrams for Ball on Beam System" },
@@ -762,9 +762,9 @@ const projectData = {
         ]
     },
     11: {
-        title: "Heat Transfer (MAE 3240): Problem Set Discussion and Derivation",
+        title: "Heat Transfer Derivation",
         placeholder: "Heat Transfer",
-        description: "Project as a part of MAE 3240 (Heat Transfer). This project describes a derivation of a problem set question, as well as some of the takeaways from the problem set.",
+        description: "I modeled a 1D steady-state heat-transfer problem with convection and radiation, then wrote up the derivation and takeaways.",
         tech: ["Heat Transfer", "Figma", "Scientific Writing"],
         images: [],
         details: `
@@ -785,9 +785,9 @@ const projectData = {
     },
 
     12: {
-    title: "Mechatronics Project",
+    title: "ASML Robot Competition",
     placeholder: "Mechatronics",
-    description: "Project is a part of MAE 3780 (Mechatronics). This project describes the process involved in the annual ASML Robot Competition in which teams compete to develop autonomous robots to pick up as many blocks as possible in a 1 minute time-frame.",
+    description: "I modeled sensing and motor control for an autonomous block-picking robot, including a passive gripper informed by soft-robotics work.",
     tech: ["Mechatronics", "C", "Circuitry Design"],
     images: [],
     videos: [
@@ -805,7 +805,7 @@ const projectData = {
         </p>
 
         <h3>Technical Implementation</h3>
-        <p>The system involved the use of a color sensor to detect the natural frequency (and period) of particular colors in the competition environment. Then, using a hand-derived algorithm, the robot would move accordingly depending on its world-view of the environment. The project also involved my personal designs of a passive arm structure to pick up blocks with many specifications influened via previous work in soft-robotics and control theory. </p>
+        <p>I used a color sensor to detect period cues in the arena, then a hand-derived control model to choose motion. I also modeled and built a passive arm to pick up blocks, with geometry informed by prior soft-robotics and control work.</p>
     `,
     links: [
         { text: "Write-up PDF", url: "assets/resume/mechatronics_write_up.pdf", type: "primary" }
@@ -1068,6 +1068,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const defaultSection = document.getElementById('books-2025-2026');
     if (defaultSection) {
         defaultSection.style.display = 'block';
+    }
+
+    const profileStage = document.getElementById('profileStage');
+    if (profileStage) {
+        const seasonButtons = profileStage.querySelectorAll('.season-btn');
+
+        function seasonFromDate(date) {
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
+            if (month === 10 || (month === 11 && day <= 2)) return 'halloween';
+            if (month === 12 || (month === 1 && day <= 6)) return 'christmas';
+            if ((month === 3 && day >= 15) || (month === 4 && day <= 20)) return 'easter';
+            return 'halloween';
+        }
+
+        function setSeasonTheme(theme) {
+            profileStage.setAttribute('data-theme', theme);
+            seasonButtons.forEach((button) => {
+                button.setAttribute('aria-pressed', button.dataset.theme === theme ? 'true' : 'false');
+            });
+        }
+
+        setSeasonTheme(seasonFromDate(new Date()));
+
+        seasonButtons.forEach((button) => {
+            button.addEventListener('click', () => setSeasonTheme(button.dataset.theme));
+        });
     }
 
 });
