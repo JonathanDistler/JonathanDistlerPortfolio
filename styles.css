@@ -186,7 +186,6 @@ body {
 .hero-image {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .profile-image-container {
@@ -202,134 +201,6 @@ body {
     object-fit: cover;
     border: 3px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
-}
-
-.profile-stage {
-    position: relative;
-    width: 260px;
-    padding-bottom: 0.25rem;
-}
-
-.profile-stage .profile-image {
-    width: 220px;
-    height: 220px;
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-}
-
-.seasonal-deco {
-    display: none;
-    position: absolute;
-    inset: -40px -78px 36px;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.profile-stage[data-theme="halloween"] .seasonal-deco[data-theme-art="halloween"],
-.profile-stage[data-theme="christmas"] .seasonal-deco[data-theme-art="christmas"],
-.profile-stage[data-theme="easter"] .seasonal-deco[data-theme-art="easter"] {
-    display: block;
-}
-
-.season-mark {
-    position: absolute;
-    width: 76px;
-    height: auto;
-    filter: drop-shadow(0 2px 0 #111);
-}
-
-.season-mark-left {
-    left: 0;
-    bottom: 16%;
-}
-
-.season-mark-right {
-    right: 0;
-    bottom: 16%;
-}
-
-.season-bat,
-.season-star,
-.season-egg {
-    position: absolute;
-}
-
-.season-bat {
-    width: 46px;
-}
-
-.season-bat-left {
-    top: 10%;
-    left: 10%;
-}
-
-.season-bat-right {
-    top: 2%;
-    right: 10%;
-    transform: scaleX(-1);
-}
-
-.season-star {
-    width: 22px;
-}
-
-.season-star-left {
-    top: 0;
-    left: 22%;
-}
-
-.season-star-right {
-    top: -8px;
-    right: 18%;
-}
-
-.season-egg {
-    width: 28px;
-}
-
-.season-egg-left {
-    top: 8%;
-    left: 12%;
-}
-
-.season-egg-right {
-    top: 0;
-    right: 10%;
-}
-
-.season-picker {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 0.9rem;
-    position: relative;
-    z-index: 3;
-}
-
-.season-btn {
-    background: #f4f1ea;
-    color: #111;
-    border: 2px solid #111;
-    border-radius: 999px;
-    padding: 0.28rem 0.72rem;
-    font-size: 0.72rem;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: inherit;
-    line-height: 1.2;
-}
-
-.season-btn:hover {
-    transform: translateY(-1px);
-}
-
-.season-btn[aria-pressed="true"] {
-    background: #111;
-    color: #f4f1ea;
 }
 
 .profile-placeholder {
@@ -613,16 +484,8 @@ section {
 
 .project-content h3 {
     font-size: 1.3rem;
-    margin-bottom: 0.35rem;
+    margin-bottom: 1rem;
     color: #2d3748;
-}
-
-.project-content .project-context {
-    color: #667eea;
-    font-weight: 600;
-    font-size: 0.88rem;
-    margin-bottom: 0.7rem;
-    line-height: 1.4;
 }
 
 .project-content p {
@@ -1372,23 +1235,6 @@ section {
     
     .hero-title {
         font-size: 2.5rem;
-    }
-
-    .profile-stage {
-        width: 220px;
-    }
-
-    .profile-stage .profile-image {
-        width: 180px;
-        height: 180px;
-    }
-
-    .seasonal-deco {
-        inset: -28px -58px 32px;
-    }
-
-    .season-mark {
-        width: 58px;
     }
     
     .about-content {
