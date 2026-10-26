@@ -1079,3 +1079,86 @@ console.log('Personal website loaded successfully! 🚀');
 
 
 
+// GitHub activity summary for the profile header.
+(() => {
+    const daysSlider = document.getElementById('activity-days');
+    if (!daysSlider) return;
+
+    const lastCommitNode = document.getElementById('github-last-commit');
+    const mostActiveNode = document.getElementById('github-most-active');
+    const daysValueNode = document.getElementById('activity-days-value');
+    const username = 'JonathanDistler';
+    let repositories = [];
+
+    const formatDate = (date) => new Intl.DateTimeFormat(undefined, {
+        year: 'numeric', month: 'short', day: 'numeric'
+    }).format(date);
+
+    function renderActivity() {
+        const days = Number(daysSlider.value);
+        daysValueNode.textContent = days;
+        const cutoff = Date.now() - days * 24 * 60 * 60 * 1000;
+        const totals = repositories.map((repo) => ({
+            ...repo,
+            count: repo.commits.filter((commit) => commit.date >= cutoff).length
+        })).sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+        const leader = totals[0];
+
+        if (!leader || leader.count === 0) {
+            mostActiveNode.textContent = 'No public commits in this window';
+            return;
+        }
+        mostActiveNode.innerHTML = `<a href="${leader.url}" target="_blank" rel="noopener noreferrer">${leader.name}</a> · ${leader.count} ${leader.count === 1 ? 'commit' : 'commits'}`;
+    }
+
+    daysSlider.addEventListener('input', renderActivity);
+
+    async function loadActivity() {
+        try {
+            const repoResponse = await fetch(`https://api.github.com/users/${username}/repos?type=owner&sort=pushed&per_page=100`);
+            if (!repoResponse.ok) throw new Error('GitHub repository request failed');
+            const repoList = (await repoResponse.json())
+                .filter((repo) => !repo.fork)
+                .sort((a, b) => new Date(b.pushed_at || 0) - new Date(a.pushed_at || 0))
+                .slice(0, 30);
+
+            const results = [];
+            for (let start = 0; start < repoList.length; start += 5) {
+                const batch = repoList.slice(start, start + 5);
+                const batchResults = await Promise.all(batch.map(async (repo) => {
+                    try {
+                        const response = await fetch(`https://api.github.com/repos/${username}/${encodeURIComponent(repo.name)}/commits?author=${username}&per_page=100`);
+                        if (!response.ok) return { repo, commits: [] };
+                        const commits = await response.json();
+                        return {
+                            repo,
+                            commits: commits.map((item) => ({
+                                date: new Date(item.commit.author?.date || item.commit.committer?.date).getTime(),
+                                url: item.html_url
+                            })).filter((commit) => Number.isFinite(commit.date))
+                        };
+                    } catch {
+                        return { repo, commits: [] };
+                    }
+                }));
+                results.push(...batchResults);
+            }
+
+            repositories = results.map(({ repo, commits }) => ({
+                name: repo.name,
+                url: repo.html_url,
+                commits
+            }));
+
+            const latest = repositories.flatMap((repo) => repo.commits)
+                .sort((a, b) => b.date - a.date)[0];
+            lastCommitNode.textContent = latest ? formatDate(new Date(latest.date)) : 'No recent public commits found';
+            renderActivity();
+        } catch {
+            lastCommitNode.textContent = 'Activity is temporarily unavailable';
+            mostActiveNode.textContent = 'Activity is temporarily unavailable';
+        }
+    }
+
+    loadActivity();
+})();

@@ -59,7 +59,20 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="images/profile.png" alt="Jonathan Distler" class="profile-image" width="200">
+            <div class="profile-group">
+                <img src="images/profile.png" alt="Jonathan Distler" class="profile-image" width="200">
+                <aside class="github-activity" aria-labelledby="github-activity-title">
+                    <div class="github-activity-heading">
+                        <h2 id="github-activity-title">GitHub activity</h2>
+                        <a href="https://github.com/JonathanDistler" target="_blank" rel="noopener noreferrer">@JonathanDistler</a>
+                    </div>
+                    <p class="github-stat"><span>Last commit</span><strong id="github-last-commit" aria-live="polite">Loading…</strong></p>
+                    <div class="github-stat"><span>Most active repository</span><strong id="github-most-active" aria-live="polite">Loading…</strong></div>
+                    <label class="activity-range-label" for="activity-days">Activity window <strong><span id="activity-days-value">30</span> days</strong></label>
+                    <input id="activity-days" type="range" min="7" max="180" step="1" value="30" aria-describedby="activity-window-note">
+                    <p class="activity-window-note" id="activity-window-note">Based on public commits across my 30 most recently updated repositories.</p>
+                </aside>
+            </div>
         </div>
     </div>
 </section>
@@ -239,7 +252,7 @@
                 </div>
                 <div class="project-content">
                     <h3>SRL: Soft Robotic Fish</h3>
-                    <p>Soft robotic fish tail optimization project for ETH Zurich SRL, featuring computer vision analysis, MuJoCo simulation, and experimental validation.</p>
+                    <p>I optimized a soft robotic fish tail at ETH Zurich’s Soft Robotics Lab, combining computer vision, MuJoCo simulation, and experimental validation.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">C++</span>
@@ -279,7 +292,7 @@
                 </div>
                 <div class="project-content">
                     <h3>Aerospace Adversary: Magpie Project</h3>
-                    <p>Development and implementation on a live drone-localization system using an indoor GPS system, as well as data analysis to provide accurate positional results. This project also involved the utilization of ROS 2 nodes to publish and subscribe to telemetry data in the real-world and in simulation.</p>
+                    <p>I developed an indoor positioning system for a drone and analyzed its accuracy, using ROS 2 nodes to exchange telemetry in both real-world flights and simulation.</p>
                     <div class="project-tech">
                         <span class="tech-tag">GPS</span>
                         <span class="tech-tag">C++</span>
@@ -308,7 +321,7 @@
                 </div>
                 <div class="project-content">
                     <h3>Cornell Hyperloop</h3>
-                    <p>Collaborative work as a part of the Cornell Hyperloop Project Team, developing a battery pack enclosure, wire harnesses, electronic holders, and work with the carbon fiber aeroshell and the machining of parts necessary for structural integrity. I also contributed towards control systems and stucturual integrity testing.</p>
+                    <p>I contributed to Cornell Hyperloop’s battery enclosure, wiring, electronics mounts, and carbon-fiber aeroshell, along with control systems and structural testing.</p>
                     <div class="project-tech">
                         <span class="tech-tag">CAD (Solidworks)</span>
                         <span class="tech-tag">Machining</span>
@@ -355,7 +368,7 @@ JJ  J #    J #     |   L    |
                 </div>
                 <div class="project-content">
                     <h3>HRC2: Human Robot Interaction</h3>
-                    <p>Project as part of the Human-Robot Collaboration and Companionship Laboratory at Cornell University. My work involved developing a PDDL to represent a cooking task. Then, implementing an algorithm to follow the solved action space using the Stretch RE1 robot.</p>
+                    <p>I modeled a cooking task in PDDL and built an execution algorithm for Cornell’s Stretch RE1 robot as part of the Human-Robot Collaboration and Companionship Lab.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Robotic Hardware</span>
                         <span class="tech-tag">ROS 2</span>
@@ -385,7 +398,7 @@ JJ  J #    J #     |   L    |
                 </div>
                 <div class="project-content">
                     <h3>Game of Life Simulation</h3>
-                    <p>Interactive cellular automaton simulation with custom rule sets, featuring multiple generation tracking and Conway's Game of Life implementation, as well as a team-version in which multiple colonies compete.</p>
+                    <p>I built an interactive cellular automaton with custom rules, generation tracking, Conway’s Game of Life, and a team mode where colonies compete.</p>
                     <div class="project-tech">
                         <span class="tech-tag">HTML</span>
                         <span class="tech-tag">JavaScript</span>
@@ -413,7 +426,7 @@ ejm   `.__|_______.'</pre>
                 </div>
                 <div class="project-content">
                     <h3>Original Design Prototype</h3>
-                    <p>Part of a project for MAE 2250 (Mechanical Design), in which our team was tasked withi conducting market research to determine a viable product. Then, over multiple iterations, developing a working prototype.</p>
+                    <p>I worked with a team in MAE 2250 to research a product opportunity, refine the design through multiple iterations, and build a working prototype.</p>
                     <div class="project-tech">
                         <span class="tech-tag">CAD (Fusion 360)</span>
                         <span class="tech-tag">Prototyping</span>
@@ -459,7 +472,7 @@ ejm   `.__|_______.'</pre>
                 </div>
                 <div class="project-content">
                     <h3>Household CAD</h3>
-                    <p>Part of a project for MAE 2250 (Mechanical Design), in which I was tasked withi creating a 1:1 version of a real-world object in CAD using the Fusion 360 software.</p>
+                    <p>I recreated a real-world object at full scale in Fusion 360 for my MAE 2250 mechanical design project.</p>
                     <div class="project-tech">
                         <span class="tech-tag">CAD (Fusion 360)</span>
                         <span class="tech-tag">Engineering Drawing</span>
@@ -496,7 +509,7 @@ ejm   `.__|_______.'</pre>
                 </div>
                 <div class="project-content">
                     <h3>Mechanics of Materials (MAE 3270): Torque Wrench Analysis</h3>
-                    <p>Comprehensive final project for MAE 3270 (Mechanics of Materials) course. This project involved iterating over torque-wrench dimensions and materials to meet high safety-factor demands. Then comparing hand-calculation results with empirical ANSYS results.</p>
+                    <p>I refined a torque wrench’s dimensions and materials to meet a high safety factor, then compared hand calculations with ANSYS results for my MAE 3270 project.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Mechanics of Materials</span>
                         <span class="tech-tag">ANSYS</span>
@@ -532,7 +545,7 @@ ejm   `.__|_______.'</pre>
                 </div>
                 <div class="project-content">
                     <h3>Fluid Mechanics (MAE 3230): Fluidic Machine Dissection</h3>
-                    <p>Comprehensive final project for MAE 3230 (Introductory Fluid Mechanics) course. This project involved dissecting a weed-eater, then describing the fluid mechanics of the machine using comprehensive vocabulary, then creating a script and making a short-video.</p>
+                    <p>I dissected a weed trimmer, analyzed its fluid mechanics, and created a short explanatory video for my MAE 3230 final project.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Fluid Mechanics</span>
                         <span class="tech-tag">Hardware</span>
@@ -571,7 +584,7 @@ ejm   `.__|_______.'</pre>
                 </div>
                 <div class="project-content">
                     <h3>System Dynamics (MAE 3260): LQR Control of Ball on a Ramp</h3>
-                    <p>Linear Quadratic Regulator (LQR) control system implementation for stabilizing a ball on a ramp, demonstrating advanced control theory and system dynamics.</p>
+                    <p>I designed an LQR controller to stabilize a ball on a ramp, applying control theory and system dynamics.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Control Systems</span>
                         <span class="tech-tag">LQR</span>
@@ -601,7 +614,7 @@ ejm   `.__|_______.'</pre>
                 </div>
                 <div class="project-content">
                     <h3>Heat Transfer (MAE 3240): Problem Set Discussion and Derivation</h3>
-                    <p>Project as a part of MAE 3240 (Heat Transfer). This project describes a derivation of a problem set question, as well as some of the takeaways from the problem set.</p>
+                    <p>I derived a heat-transfer problem and explained the key ideas behind the solution for my MAE 3240 project.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Heat Transfer</span>
                         <span class="tech-tag">Figma</span>
@@ -630,7 +643,7 @@ ejm   `.__|_______.'</pre>
 
                 <div class="project-content">
                     <h3>Mechatronics (MAE 3780): ASML Robot Competition</h3>
-                    <p>Project is a part of MAE 3780 (Mechatronics). This project describes the process involved in the annual ASML Robot Competition in which teams compete to develop autonomous robots to pick up as many blocks as possible in a 1 minute time-frame.</p>
+                    <p>I designed an autonomous robot with my team for the MAE 3780 ASML competition, where teams race to collect as many blocks as possible in one minute.</p>
 
                     <div class="project-tech">
                         <span class="tech-tag">Mechatronics</span>

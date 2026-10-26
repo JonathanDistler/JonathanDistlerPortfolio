@@ -188,6 +188,48 @@ body {
     justify-content: center;
 }
 
+.profile-group {
+    width: min(100%, 390px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.profile-group .profile-image {
+    width: 200px;
+    height: 200px;
+}
+
+.github-activity {
+    width: 100%;
+    padding: 1.2rem 1.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+    background: rgba(29, 24, 65, 0.28);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 16px 40px rgba(24, 20, 56, 0.18);
+}
+
+.github-activity-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.9rem;
+}
+
+.github-activity-heading h2 { font-size: 1.05rem; }
+.github-activity a { color: #e9e7ff; font-size: 0.82rem; }
+.github-stat { display: flex; flex-direction: column; margin: 0 0 0.75rem; }
+.github-stat span, .activity-range-label { font-size: 0.78rem; opacity: 0.8; }
+.github-stat strong { font-size: 0.98rem; line-height: 1.4; overflow-wrap: anywhere; }
+.github-stat strong a { font-size: inherit; }
+.activity-range-label { display: flex; justify-content: space-between; gap: 0.5rem; margin-top: 0.25rem; }
+.activity-range-label strong { color: white; font-size: 0.82rem; opacity: 1; }
+#activity-days { width: 100%; accent-color: #e5e0ff; cursor: pointer; }
+.activity-window-note { margin: 0.15rem 0 0; font-size: 0.68rem; line-height: 1.4; opacity: 0.68; }
+
 .profile-image-container {
     position: relative;
     width: 300px;
