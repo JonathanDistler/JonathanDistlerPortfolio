@@ -437,7 +437,7 @@ revealElements.forEach(element => {
 const projectData = {
     1: {
         title: "Soft Fish (SoFi) Prototype",
-        placeholder: "Soft Fish Tail",
+        placeholder: "Soft Fish Tail Optimization",
         description: "Soft robotic fish tail optimization project for ETH Zurich SRL, featuring computer vision analysis, MuJoCo simulation, and experimental validation.",
         tech: ["Python", "MATLAB", "C++", "MuJoCo", "Computer Vision"],
         images: [
@@ -481,7 +481,7 @@ const projectData = {
     },
     2: {
         title: "Adversary GPS Setup",
-        placeholder: "Aerospace Adversary GPS Setup",
+        placeholder: "Aerospace Adversary",
         description: "Experimental testing setup as a part of the Cornell Aerospace Adversary Lab. Involved the implementation of a GPS-localization system to accurately measure (and filter) positional data of a drone",
         tech: ["CAD Design", "Prototyping", "DFX", "Testing Protocols"],
         images: [
@@ -657,7 +657,7 @@ const projectData = {
     },
     7: {
         title: "Household CAD Practice",
-        placeholder: "Household CAD Practice",
+        placeholder: "CAD Practice",
         description: "Development of a 1:1 CAD to real-world model of a Seiko Arabic Dial Watch",
         tech: ["CAD Design", "Prototyping", "DFX", "Testing Protocols"],
         images: [
@@ -813,7 +813,7 @@ const projectData = {
 },
 13: {
     title: "MAE 4300 Ethics Essay: The Boeing 737 MAX Crisis",
-    placeholder: "Ethics",
+    placeholder: "Engineers and Society",
     description: "I wrote this essay for Engineers and Society (MAE 4300). It analyzes the Boeing 737 MAX crisis and examines the ethical responsibilities of engineers and organizations, along with changes that could help prevent similar failures.",
     tech: ["Technical Writing", "Engineers and Society", "Ethics"],
     details: "",
