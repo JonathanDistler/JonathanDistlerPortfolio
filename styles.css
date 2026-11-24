@@ -392,6 +392,7 @@ section {
 }
 
 .project-card {
+    cursor: pointer;
     background: white;
     border-radius: 15px;
     overflow: hidden;
@@ -499,6 +500,15 @@ section {
     line-height: 1.05;
 }
 
+.ethics-ascii {
+    top: 43%;
+    font-size: 0.9rem;
+}
+
+.ethics-ascii + .project-placeholder {
+    align-self: flex-end;
+    margin-bottom: 1rem;
+}
 
 .project-img {
     width: 100%;
@@ -1405,6 +1415,9 @@ html {
 }
 
 .close {
+    border: 0;
+    background: transparent;
+    line-height: 1;
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -1603,6 +1616,11 @@ html {
 
 .modal-details {
     margin-bottom: 1.5rem;
+}
+
+.modal-details:empty,
+.modal-image-cards:empty {
+    display: none;
 }
 
 .modal-details h3 {

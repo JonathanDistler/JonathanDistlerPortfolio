@@ -14,7 +14,7 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
 }));
 
 // Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]:not(.project-expand-btn)').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
@@ -808,56 +808,55 @@ const projectData = {
         <p>The system involved the use of a color sensor to detect the natural frequency (and period) of particular colors in the competition environment. Then, using a hand-derived algorithm, the robot would move accordingly depending on its world-view of the environment. The project also involved my personal designs of a passive arm structure to pick up blocks with many specifications influened via previous work in soft-robotics and control theory. </p>
     `,
     links: [
-        { text: "Write-up PDF", url: "assets/resume/mechatronics_write_up.pdf", type: "primary" }
+        { text: "Write-up PDF", url: "assets/resume/MAE_3780.pdf", type: "primary" }
+    ]
+},
+13: {
+    title: "MAE 4300 Ethics Essay: The Boeing 737 MAX Crisis",
+    placeholder: "Ethics",
+    description: "I wrote this essay for Engineers and Society (MAE 4300). It analyzes the Boeing 737 MAX crisis and examines the ethical responsibilities of engineers and organizations, along with changes that could help prevent similar failures.",
+    tech: ["Technical Writing", "Engineers and Society", "Ethics"],
+    details: "",
+    links: [
+        { text: "Read Essay (PDF)", url: "assets/resume/Ethics_Final_Paper.pdf", type: "primary" }
     ]
 }
 };
 
-// Modal functionality - use event delegation to ensure buttons work
 let modal, closeBtn, imageModal, imageCloseBtn, enlargedImage, imageCaption;
-
-function bindProjectExpandButtons() {
-    const expandButtons = document.querySelectorAll('.project-expand-btn');
-    expandButtons.forEach(button => {
-        if (button.dataset.boundExpand === 'true') return;
-
-        button.addEventListener('click', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            const projectCard = this.closest('.project-card');
-            if (!projectCard) return;
-            const projectId = projectCard.getAttribute('data-project');
-            openProjectModal(projectId);
-        });
-
-        button.dataset.boundExpand = 'true';
-    });
-}
+let activeProjectLink;
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Get modal elements
     modal = document.getElementById('projectModal');
-    closeBtn = document.querySelector('.close');
+    closeBtn = modal.querySelector('.close');
     imageModal = document.getElementById('imageModal');
     imageCloseBtn = document.querySelector('.image-close');
     enlargedImage = document.getElementById('enlargedImage');
     imageCaption = document.getElementById('imageCaption');
-    
-    // Use event delegation for project expand buttons (works for dynamically added buttons)
-    document.addEventListener('click', function(event) {
-        const expandButton = event.target.closest('.project-expand-btn');
-        if (!expandButton) return;
 
-        const projectCard = expandButton.closest('.project-card');
-        if (projectCard) {
-            const projectId = projectCard.getAttribute('data-project');
-            openProjectModal(projectId);
-        }
+    const projectLinks = new Map();
+    document.querySelectorAll('.project-expand-btn').forEach(link => {
+        projectLinks.set(link.hash, link);
+        const card = link.closest('.project-card');
+        card.addEventListener('click', event => {
+            if (event.target.closest('a, button') || window.getSelection()?.toString()) return;
+            link.click();
+        });
     });
 
-    // Direct per-button binding as a fallback to guarantee clicks open modal.
-    bindProjectExpandButtons();
-    
+    function syncProjectModal() {
+        const link = projectLinks.get(window.location.hash);
+        if (link) {
+            activeProjectLink = link;
+            openProjectModal(link.closest('.project-card').dataset.project);
+        } else if (activeProjectLink) {
+            closeProjectModal();
+        }
+    }
+
+    window.addEventListener('hashchange', syncProjectModal);
+    syncProjectModal();
+
     // Close modal when X is clicked
     if (closeBtn) {
         closeBtn.addEventListener('click', closeProjectModal);
@@ -889,11 +888,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close modal with Escape key
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
-            if (modal && modal.style.display === 'block') {
-                closeProjectModal();
-            }
             if (imageModal && imageModal.style.display === 'block') {
                 closeImageModal();
+            } else if (modal && modal.style.display === 'block') {
+                closeProjectModal();
             }
         }
     });
@@ -1011,28 +1009,26 @@ function openProjectModal(projectId) {
         }
     });
 
-    // Show modal
     modal.style.display = 'block';
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    modal.querySelector('.modal-content').scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
 }
 
 
 function closeProjectModal() {
-    if (!modal) {
-        modal = document.getElementById('projectModal');
-    }
-    if (modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Restore scrolling
-    }
-}
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
 
-// Expose modal opener globally for robustness/debugging and bind immediately.
-window.openProjectModal = openProjectModal;
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', bindProjectExpandButtons);
-} else {
-    bindProjectExpandButtons();
+    if (activeProjectLink) {
+        if (window.location.hash === activeProjectLink.hash) {
+            const url = new URL(window.location.href);
+            url.hash = '';
+            window.history.replaceState(window.history.state, '', url);
+        }
+        activeProjectLink.focus({ preventScroll: true });
+        activeProjectLink = null;
+    }
 }
 
 // Reading year toggle functionality
